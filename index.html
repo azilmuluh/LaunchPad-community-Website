@@ -1,11 +1,839 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <tit>YOMI</tit>
-    </head>
-    <body>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, perferendis ratione amet harum unde aperiam dolor inventore reprehenderit quisquam. Aut neque exercitationem nostrum officia, asperiores fugiat optio quas porro ex!
-        </p>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 LaunchPad Community - Guiding Cameroonian Youth Into Opportunity</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/logos/logo.jpeg">
+    <link rel="apple-touch-icon" href="images/logos/logo.jpeg">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="LaunchPad Community is a youth-led organization connecting Cameroonian students to verified scholarships, internships, competitions, and mentorship opportunities. Join 800+ members today!">
+    <meta name="keywords" content="LaunchPad Community, Cameroon youth, scholarships, internships, opportunities, mentorship, IYMC, ICSC, student programs, Cameroonian students">
+    <meta name="author" content="LaunchPad Community">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://launchpadcommunity.com/">
+    <meta property="og:title" content="LaunchPad Community - Guiding Cameroonian Youth Into Opportunity">
+    <meta property="og:description" content="Join 800+ Cameroonian youth accessing verified scholarships, internships, and mentorship. Talent is everywhere, but access is not.">
+    <meta property="og:image" content="images/logos/logo.jpeg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://launchpadcommunity.com/">
+    <meta property="twitter:title" content="LaunchPad Community - Guiding Cameroonian Youth Into Opportunity">
+    <meta property="twitter:description" content="Join 800+ Cameroonian youth accessing verified scholarships, internships, and mentorship.">
+    <meta property="twitter:image" content="images/logos/logo.jpeg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://launchpadcommunity.com/">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "LaunchPad Community",
+      "alternateName": "LaunchPad",
+      "url": "https://launchpadcommunity.com",
+      "logo": "https://launchpadcommunity.com/images/logos/logo.jpeg",
+      "description": "LaunchPad Community is a youth-led organization connecting Cameroonian students to verified scholarships, internships, competitions, and mentorship opportunities.",
+      "foundingDate": "2025-12-05",
+      "founder": {
+        "@type": "Person",
+        "name": "Muluh Azinwi Success"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+237-690709635",
+        "contactType": "Customer Service",
+        "email": "LaunchPadCommunity00@gmail.com",
+        "areaServed": "CM",
+        "availableLanguage": ["English", "French"]
+      },
+      "sameAs": [
+        "https://x.com/LaunchPadGr0up",
+        "https://www.instagram.com/launchpadc0mmunity",
+        "https://www.linkedin.com/company/launchpad-community/",
+        "https://www.facebook.com/profile.php?id=61584726481997"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CM",
+        "addressRegion": "Cameroon"
+      }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logos/logo.jpeg" alt="LaunchPad Logo" class="logo-img">
+                <span class="fire-text">LaunchPad</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home" data-en="Home" data-fr="Accueil" data-de="Startseite" data-zh="首页" data-es="Inicio">Home</a></li>
+                <li><a href="#about" data-en="About" data-fr="À propos" data-de="Über uns" data-zh="关于" data-es="Acerca de">About</a></li>
+                <li><a href="#team" data-en="Team" data-fr="Équipe" data-de="Team" data-zh="团队" data-es="Equipo">Team</a></li>
+                <li><a href="#mentors" data-en="Mentors" data-fr="Mentors" data-de="Mentoren" data-zh="导师" data-es="Mentores">Mentors</a></li>
+                <li><a href="#partners" data-en="Partners" data-fr="Partenaires" data-de="Partner" data-zh="合作伙伴" data-es="Socios">Partners</a></li>
+                <li><a href="blog.html" data-en="Blog" data-fr="Blog" data-de="Blog" data-zh="博客" data-es="Blog">Blog</a></li>
+                <li><a href="#apply" data-en="Apply" data-fr="Postuler" data-de="Bewerben" data-zh="申请" data-es="Aplicar">Apply</a></li>
+                <li><a href="#guidelines" data-en="Guidelines" data-fr="Directives" data-de="Richtlinien" data-zh="指导方针" data-es="Pautas">Guidelines</a></li>
+                <li><a href="#contact" data-en="Contact" data-fr="Contact" data-de="Kontakt" data-zh="联系" data-es="Contacto">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <div class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </div>
+                <div class="language-selector">
+                    <select id="languageSelect" onchange="changeLanguage()">
+                        <option value="en">EN</option>
+                        <option value="fr">FR</option>
+                        <option value="de">DE</option>
+                        <option value="zh">中文</option>
+                        <option value="es">ES</option>
+                    </select>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="fire-text">LaunchPad Community</span>
+            </h1>
+            <p class="hero-subtitle" data-en="Guiding Cameroonian Youth Into Opportunity" data-fr="Guider la Jeunesse Camerounaise vers l'Opportunité" data-de="Kamerunische Jugend zu Möglichkeiten führen" data-zh="引导喀麦隆青年走向机遇" data-es="Guiando a la Juventud Camerunesa hacia la Oportunidad">Guiding Cameroonian Youth Into Opportunity</p>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number fire-text">800+</span>
+                    <span class="stat-label" data-en="Active Members" data-fr="Membres Actifs" data-de="Aktive Mitglieder" data-zh="活跃成员" data-es="Miembros Activos">Active Members</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number fire-text">100+</span>
+                    <span class="stat-label" data-en="Opportunities Shared" data-fr="Opportunités Partagées" data-de="Geteilte Möglichkeiten" data-zh="分享的机会" data-es="Oportunidades Compartidas">Opportunities Shared</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number fire-text">85%</span>
+                    <span class="stat-label" data-en="Success Rate" data-fr="Taux de Réussite" data-de="Erfolgsrate" data-zh="成功率" data-es="Tasa de Éxito">Success Rate</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="showSubscribeModal()" data-en="Join Community" data-fr="Rejoindre la Communauté" data-de="Gemeinschaft Beitreten" data-zh="加入社区" data-es="Unirse a la Comunidad">Join Community</button>
+                <button class="btn-secondary" onclick="scrollToSection('about')" data-en="Learn More" data-fr="En Savoir Plus" data-de="Mehr Erfahren" data-zh="了解更多" data-es="Saber Más">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title fire-text">About LaunchPad</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <div class="story-section">
+                        <h3 data-en="The Story of LaunchPad Community" data-fr="L'Histoire de la Communauté LaunchPad" data-de="Die Geschichte der LaunchPad-Gemeinschaft" data-zh="LaunchPad社区的故事" data-es="La Historia de la Comunidad LaunchPad">The Story of LaunchPad Community</h3>
+                        <p data-en="LaunchPad Community began as a simple but purposeful initiative. Initially created as a small orientation group to support participants of the International Youth Math Challenge (IYMC). What started as separate support spaces evolved into one unified, growing community, driven by a shared need: access to opportunities, clarity, and support." data-fr="La Communauté LaunchPad a commencé comme une initiative simple mais ciblée. Initialement créée comme un petit groupe d'orientation pour soutenir les participants du Défi International de Mathématiques pour Jeunes (IYMC). Ce qui a commencé comme des espaces de soutien séparés a évolué en une communauté unifiée et croissante, motivée par un besoin partagé : l'accès aux opportunités, la clarté et le soutien." data-de="Die LaunchPad-Gemeinschaft begann als einfache, aber zielgerichtete Initiative. Ursprünglich als kleine Orientierungsgruppe zur Unterstützung der Teilnehmer der International Youth Math Challenge (IYMC) gegründet. Was als separate Unterstützungsräume begann, entwickelte sich zu einer einheitlichen, wachsenden Gemeinschaft, angetrieben von einem gemeinsamen Bedürfnis: Zugang zu Möglichkeiten, Klarheit und Unterstützung." data-zh="LaunchPad社区始于一个简单而有目的的倡议。最初创建为一个小型指导小组，以支持国际青年数学挑战赛（IYMC）的参与者。从分离的支持空间开始，发展成为一个统一的、不断增长的社区，由共同的需求驱动：获得机会、清晰度和支持。" data-es="La Comunidad LaunchPad comenzó como una iniciativa simple pero con propósito. Inicialmente creada como un pequeño grupo de orientación para apoyar a los participantes del Desafío Internacional de Matemáticas para Jóvenes (IYMC). Lo que comenzó como espacios de apoyo separados evolucionó hacia una comunidad unificada y creciente, impulsada por una necesidad compartida: acceso a oportunidades, claridad y apoyo.">LaunchPad Community began as a simple but purposeful initiative. Initially created as a small orientation group to support participants of the International Youth Math Challenge (IYMC). What started as separate support spaces evolved into one unified, growing community, driven by a shared need: access to opportunities, clarity, and support.</p>
+                        
+                        <p data-en="Founded on December 5th, 2025, LaunchPad Community is a youth-led ecosystem based in Cameroon designed to help young people truly change their lives through timely access to opportunities, guidance and follow-up, and a safe space to grow, network, and collaborate." data-fr="Fondée le 5 décembre 2025, la Communauté LaunchPad est un écosystème dirigé par des jeunes basé au Cameroun, conçu pour aider les jeunes à vraiment changer leur vie grâce à un accès opportun aux opportunités, des conseils et un suivi, et un espace sûr pour grandir, réseauter et collaborer." data-de="Gegründet am 5. Dezember 2025, ist die LaunchPad-Gemeinschaft ein von Jugendlichen geführtes Ökosystem mit Sitz in Kamerun, das darauf ausgelegt ist, jungen Menschen dabei zu helfen, ihr Leben durch rechtzeitigen Zugang zu Möglichkeiten, Beratung und Nachbetreuung sowie einen sicheren Raum zum Wachsen, Vernetzen und Zusammenarbeiten wirklich zu verändern." data-zh="成立于2025年12月5日，LaunchPad社区是一个位于喀麦隆的青年主导生态系统，旨在通过及时获得机会、指导和跟进，以及一个安全的成长、网络和合作空间，帮助年轻人真正改变他们的生活。" data-es="Fundada el 5 de diciembre de 2025, la Comunidad LaunchPad es un ecosistema liderado por jóvenes con sede en Camerún, diseñado para ayudar a los jóvenes a cambiar verdaderamente sus vidas a través del acceso oportuno a oportunidades, orientación y seguimiento, y un espacio seguro para crecer, hacer networking y colaborar.">Founded on December 5th, 2025, LaunchPad Community is a youth-led ecosystem based in Cameroon designed to help young people truly change their lives through timely access to opportunities, guidance and follow-up, and a safe space to grow, network, and collaborate.</p>
+                        
+                        <div class="story-full" id="fullStory" style="display: none;">
+                            <p data-en="As the group grew, it naturally attracted other motivated students hungry for guidance and opportunities. Soon after, this group collaborated with and later merged into an ICSC-oriented group, bringing together learners from different academic and competitive backgrounds." data-fr="Au fur et à mesure que le groupe grandissait, il a naturellement attiré d'autres étudiants motivés avides de conseils et d'opportunités. Peu après, ce groupe a collaboré avec et s'est ensuite fusionné dans un groupe orienté ICSC, rassemblant des apprenants de différents horizons académiques et compétitifs." data-de="Als die Gruppe wuchs, zog sie natürlich andere motivierte Studenten an, die nach Anleitung und Möglichkeiten hungerten. Kurz darauf arbeitete diese Gruppe mit einer ICSC-orientierten Gruppe zusammen und fusionierte später, wodurch Lernende aus verschiedenen akademischen und wettbewerbsorientierten Hintergründen zusammengebracht wurden." data-zh="随着小组的发展，它自然吸引了其他渴望指导和机会的积极学生。不久之后，该小组与一个以ICSC为导向的小组合作并后来合并，汇集了来自不同学术和竞争背景的学习者。" data-es="A medida que el grupo creció, naturalmente atrajo a otros estudiantes motivados hambrientos de orientación y oportunidades. Poco después, este grupo colaboró y luego se fusionó con un grupo orientado a ICSC, reuniendo a estudiantes de diferentes orígenes académicos y competitivos.">As the group grew, it naturally attracted other motivated students hungry for guidance and opportunities. Soon after, this group collaborated with and later merged into an ICSC-oriented group, bringing together learners from different academic and competitive backgrounds.</p>
+                            
+                            <p data-en="The inspiration behind LaunchPad is deeply personal. As a secondary school student, our Founder and CEO often felt disconnected from the vast opportunities available globally. Even when some opportunities became visible, self-doubt, lack of guidance, and the feeling that they were 'too far-reaching' or 'unrealistic' often held him back." data-fr="L'inspiration derrière LaunchPad est profondément personnelle. En tant qu'élève du secondaire, notre fondateur et PDG se sentait souvent déconnecté des vastes opportunités disponibles à l'échelle mondiale. Même lorsque certaines opportunités devenaient visibles, le doute de soi, le manque de conseils et le sentiment qu'elles étaient 'trop ambitieuses' ou 'irréalistes' le retenaient souvent." data-de="Die Inspiration hinter LaunchPad ist zutiefst persönlich. Als Sekundarschüler fühlte sich unser Gründer und CEO oft von den umfangreichen weltweit verfügbaren Möglichkeiten abgekoppelt. Selbst wenn einige Möglichkeiten sichtbar wurden, hielten ihn Selbstzweifel, mangelnde Anleitung und das Gefühl, dass sie 'zu weitreichend' oder 'unrealistisch' waren, oft zurück." data-zh="LaunchPad背后的灵感是深刻的个人经历。作为一名中学生，我们的创始人兼首席执行官经常感到与全球可用的大量机会脱节。即使一些机会变得可见，自我怀疑、缺乏指导以及认为它们'太遥远'或'不现实'的感觉经常阻碍了他。" data-es="La inspiración detrás de LaunchPad es profundamente personal. Como estudiante de secundaria, nuestro Fundador y CEO a menudo se sentía desconectado de las vastas oportunidades disponibles a nivel mundial. Incluso cuando algunas oportunidades se volvían visibles, la duda personal, la falta de orientación y la sensación de que eran 'demasiado ambiciosas' o 'poco realistas' a menudo lo frenaban.">The inspiration behind LaunchPad is deeply personal. As a secondary school student, our Founder and CEO often felt disconnected from the vast opportunities available globally. Even when some opportunities became visible, self-doubt, lack of guidance, and the feeling that they were "too far-reaching" or "unrealistic" often held him back.</p>
+                            
+                            <p data-en="Everything changed after joining Open Dreams Educational NGO. Within a short period, he gained access to the right circles, mentors, and information. In just six months, his résumé experienced remarkable growth—through scholarships, programs, networks, and real exposure. That experience proved one thing clearly: Talent is everywhere, but opportunity access is not." data-fr="Tout a changé après avoir rejoint l'ONG éducative Open Dreams. En peu de temps, il a eu accès aux bons cercles, mentors et informations. En seulement six mois, son CV a connu une croissance remarquable—grâce à des bourses, des programmes, des réseaux et une véritable exposition. Cette expérience a prouvé une chose clairement : Le talent est partout, mais l'accès aux opportunités ne l'est pas." data-de="Alles änderte sich nach dem Beitritt zur Open Dreams Educational NGO. Innerhalb kurzer Zeit erhielt er Zugang zu den richtigen Kreisen, Mentoren und Informationen. In nur sechs Monaten erlebte sein Lebenslauf ein bemerkenswertes Wachstum—durch Stipendien, Programme, Netzwerke und echte Exposition. Diese Erfahrung bewies eines klar: Talent ist überall, aber der Zugang zu Möglichkeiten nicht." data-zh="在加入Open Dreams教育非政府组织后，一切都改变了。在短时间内，他获得了正确的圈子、导师和信息。仅仅六个月，他的简历就经历了显著的增长——通过奖学金、项目、网络和真实的曝光。那次经历清楚地证明了一件事：人才无处不在，但机会的获取却不是。" data-es="Todo cambió después de unirse a la ONG educativa Open Dreams. En poco tiempo, obtuvo acceso a los círculos correctos, mentores e información. En solo seis meses, su currículum experimentó un crecimiento notable—a través de becas, programas, redes y exposición real. Esa experiencia demostró una cosa claramente: El talento está en todas partes, pero el acceso a las oportunidades no.">Everything changed after joining Open Dreams Educational NGO. Within a short period, he gained access to the right circles, mentors, and information. In just six months, his résumé experienced remarkable growth—through scholarships, programs, networks, and real exposure. That experience proved one thing clearly: <strong class="fire-text">Talent is everywhere, but opportunity access is not.</strong></p>
+                        </div>
+                        
+                        <button class="btn-secondary read-more-btn" onclick="toggleStory()" data-en="Read More" data-fr="Lire Plus" data-de="Mehr Lesen" data-zh="阅读更多" data-es="Leer Más">Read More</button>
+                    </div>
+                    <div class="objectives">
+                        <div class="objective">
+                            <i class="fas fa-bell"></i>
+                            <div>
+                                <h3 data-en="Never Miss Out" data-fr="Ne Jamais Rater" data-de="Nie Verpassen" data-zh="永不错过" data-es="Nunca Te Pierdas">Never Miss Out</h3>
+                                <p data-en="Instant access to opportunities" data-fr="Accès instantané aux opportunités" data-de="Sofortiger Zugang zu Möglichkeiten" data-zh="即时获得机会" data-es="Acceso instantáneo a oportunidades">Instant access to opportunities</p>
+                            </div>
+                        </div>
+                        <div class="objective">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h3 data-en="Resources & Mentorship" data-fr="Ressources et Mentorat" data-de="Ressourcen und Mentoring" data-zh="资源与指导" data-es="Recursos y Mentoría">Resources & Mentorship</h3>
+                                <p data-en="Curated learning and guidance" data-fr="Apprentissage et conseils organisés" data-de="Kuratiertes Lernen und Beratung" data-zh="精选学习和指导" data-es="Aprendizaje y orientación curados">Curated learning and guidance</p>
+                            </div>
+                        </div>
+                        <div class="objective">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h3 data-en="Safe Space to Grow" data-fr="Espace Sûr pour Grandir" data-de="Sicherer Raum zum Wachsen" data-zh="安全成长空间" data-es="Espacio Seguro para Crecer">Safe Space to Grow</h3>
+                                <p data-en="Supportive community network" data-fr="Réseau communautaire de soutien" data-de="Unterstützendes Gemeinschaftsnetzwerk" data-zh="支持性社区网络" data-es="Red comunitaria de apoyo">Supportive community network</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="success-stories">
+                    <h3 data-en="Success Stories" data-fr="Histoires de Réussite" data-de="Erfolgsgeschichten" data-zh="成功故事" data-es="Historias de Éxito">Success Stories</h3>
+                    <div class="story">
+                        <h4 data-en="From IYMC to MIT Scholarship" data-fr="De l'IYMC à la Bourse MIT" data-de="Von IYMC zum MIT-Stipendium" data-zh="从 IYMC 到 MIT 奖学金" data-es="Del IYMC a la Beca MIT">"From IYMC to MIT Scholarship"</h4>
+                        <p data-en="Sarah's math competition success led to her dream scholarship" data-fr="Le succès de Sarah dans la compétition de mathématiques l'a menée à sa bourse de rêve" data-de="Sarahs Erfolg im Mathematikwettbewerb führte zu ihrem Traumstipendium" data-zh="Sarah在数学竞赛中的成功为她赢得了梦寄以求的奖学金" data-es="El éxito de Sarah en la competencia de matemáticas la llevó a su beca soñada">Sarah's math competition success led to her dream scholarship</p>
+                    </div>
+                    <div class="story">
+                        <h4 data-en="Self-Taught to AWS Certified" data-fr="Autodidacte à Certifié AWS" data-de="Autodidakt zu AWS-Zertifiziert" data-zh="从自学到 AWS 认证" data-es="Autodidacta a Certificado AWS">"Self-Taught to AWS Certified"</h4>
+                        <p data-en="David's tech journey from beginner to cloud expert" data-fr="Le parcours technologique de David, de débutant à expert cloud" data-de="Davids Tech-Reise vom Anfänger zum Cloud-Experten" data-zh="David从初学者到云计算专家的技术之旅" data-es="El viaje tecnológico de David de principiante a experto en la nube">David's tech journey from beginner to cloud expert</p>
+                    </div>
+                    <div class="story">
+                        <h4 data-en="From Volunteer to UN Intern" data-fr="De Bénévole à Stagiaire ONU" data-de="Vom Freiwilligen zum UN-Praktikanten" data-zh="从志愿者到联合国实习生" data-es="De Voluntaria a Pasante de la ONU">"From Volunteer to UN Intern"</h4>
+                        <p data-en="Marie's path from AIESEC volunteer to UN internship" data-fr="Le parcours de Marie, de bénévole AIESEC à stage à l'ONU" data-de="Maries Weg von AIESEC-Freiwilliger zum UN-Praktikum" data-zh="Marie从 AIESEC 志愿者到联合国实习的道路" data-es="El camino de Marie de voluntaria AIESEC a pasantía en la ONU">Marie's path from AIESEC volunteer to UN internship</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title fire-text" data-en="Our Team" data-fr="Notre Équipe" data-de="Unser Team" data-zh="我们的团队" data-es="Nuestro Equipo">Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/Members/Muluh azinwi success.jpg" alt="Muluh Azinwi Success" class="member-photo">
+                    <h3>Muluh Azinwi Success</h3>
+                    <p class="role fire-text">Founder & CEO</p>
+                    <p data-en="Innovator & Tech Enthusiast | Software Developer | Google Gemini API Global Winner | Open Dreams Scholar | AWS Bamenda Club Tech Lead | ICSC & IYMC Ambassador" data-fr="Innovateur et Passionné de Technologie | Développeur Logiciel | Gagnant Global de l'API Google Gemini | Boursier Open Dreams | Responsable Technique du Club AWS Bamenda | Ambassadeur ICSC et IYMC" data-de="Innovator und Tech-Enthusiast | Software-Entwickler | Google Gemini API Global Winner | Open Dreams Scholar | AWS Bamenda Club Tech Lead | ICSC & IYMC Botschafter" data-zh="创新者和技术爱好者 | 软件开发者 | Google Gemini API全球获胜者 | Open Dreams学者 | AWS Bamenda俱乐部技术负责人 | ICSC和IYMC大使" data-es="Innovador y Entusiasta de la Tecnología | Desarrollador de Software | Ganador Global de la API Google Gemini | Becario Open Dreams | Líder Técnico del Club AWS Bamenda | Embajador ICSC e IYMC">Innovator & Tech Enthusiast | Software Developer | Google Gemini API Global Winner | Open Dreams Scholar | AWS Bamenda Club Tech Lead | ICSC & IYMC Ambassador</p>
+                    <div class="member-links">
+                        <a href="https://linkedin.com/in/success-muluh25" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/MuluhAzil" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="images/Members/Fodjo Nelson.jpg" alt="Fodjo Nelson" class="member-photo">
+                    <h3>Fodjdo Nelson</h3>
+                    <p class="role fire-text">Technology Lead</p>
+                    <p data-en="Software Engineer | ALCHE Alumni | Open Dreams Scholar | ICSC Ambassador | Tech Workshop Leader" data-fr="Ingénieur Logiciel | Ancien Élève ALCHE | Boursier Open Dreams | Ambassadeur ICSC | Animateur d'Ateliers Tech" data-de="Software-Ingenieur | ALCHE-Absolvent | Open Dreams Scholar | ICSC-Botschafter | Tech-Workshop-Leiter" data-zh="软件工程师 | ALCHE校友 | Open Dreams学者 | ICSC大使 | 技术研习会领导者" data-es="Ingeniero de Software | Exalumno ALCHE | Becario Open Dreams | Embajador ICSC | Líder de Talleres Técnicos">Software Engineer | ALCHE Alumni | Open Dreams Scholar | ICSC Ambassador | Tech Workshop Leader</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/Members/Ngawe Pelly.jpeg" alt="Ngawe Pelly" class="member-photo">
+                    <h3>Ngawe Pelly Nyugi</h3>
+                    <p class="role fire-text">Ambassador Coordinator</p>
+                    <p data-en="Tech Enthusiast | Youth Advocate | Open Dreams Pre-Scholar | IYMC Ambassador | SDG 4 Promoter | Writer & Poet" data-fr="Passionné de Technologie | Défenseur de la Jeunesse | Pré-Boursier Open Dreams | Ambassadeur IYMC | Promoteur ODD 4 | Écrivain et Poète" data-de="Tech-Enthusiast | Jugendanwalt | Open Dreams Pre-Scholar | IYMC-Botschafter | SDG 4-Förderer | Schriftsteller und Dichter" data-zh="技术爱好者 | 青年倡导者 | Open Dreams预科学者 | IYMC大使 | SDG 4推广者 | 作家和诗人" data-es="Entusiasta de la Tecnología | Defensor de la Juventud | Pre-Becario Open Dreams | Embajador IYMC | Promotor ODS 4 | Escritor y Poeta">Tech Enthusiast | Youth Advocate | Open Dreams Pre-Scholar | IYMC Ambassador | SDG 4 Promoter | Writer & Poet</p>
+                    <div class="member-links">
+                        <a href="https://linkedin.com/in/ngawe-pelly-nyugi-a2a40032b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61557678813223" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="team-member hidden-team">
+                    <img src="images/Members/Sevidzem John.jpeg" alt="Sevidzem John Mary Vianney" class="member-photo">
+                    <h3>Sevidzem John Mary Vianney</h3>
+                    <p class="role fire-text">Social Media Team Coordinator</p>
+                    <p data-en="Aspiring Computer Engineer | Open Dreams Pre-scholar '24 | TiC Volunteer | Fintech Enthusiast | Graphic Designer" data-fr="Ingénieur Informatique Aspirant | Pré-Boursier Open Dreams '24 | Bénévole TiC | Passionné de Fintech | Graphiste" data-de="Angehender Computeringenieur | Open Dreams Pre-Scholar '24 | TiC-Freiwilliger | Fintech-Enthusiast | Grafikdesigner" data-zh="有抱负的计算机工程师 | Open Dreams预科学者'24 | TiC志愿者 | 金融科技爱好者 | 平面设计师" data-es="Aspirante a Ingeniero Informático | Pre-Becario Open Dreams '24 | Voluntario TiC | Entusiasta de Fintech | Diseñador Gráfico">Aspiring Computer Engineer | Open Dreams Pre-scholar '24 | TiC Volunteer | Fintech Enthusiast | Graphic Designer</p>
+                    <div class="member-links">
+                        <a href="https://linkedin.com/in/sevidzem-john-mary-vianney-687993318" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="team-member hidden-team">
+                    <img src="images/Members/Chang Nelly.jpeg" alt="Chang (Brown) Nelly" class="member-photo">
+                    <h3>Chang (Brown) Nelly</h3>
+                    <p class="role fire-text">Social Media Team Coordinator</p>
+                    <p data-en="Open Dreams Pre-Scholar | Intentional School Summit Ambassador | TiC Summit Volunteer | Tech Enthusiast | Future Computer Engineer | Poet" data-fr="Pré-Boursière Open Dreams | Ambassadrice Intentional School Summit | Bénévole TiC Summit | Passionnée de Technologie | Future Ingénieure Informatique | Poète" data-de="Open Dreams Pre-Scholar | Intentional School Summit Botschafterin | TiC Summit Freiwillige | Tech-Enthusiastin | Zukünftige Computeringenieurin | Dichterin" data-zh="Open Dreams预科学者 | Intentional School Summit大使 | TiC Summit志愿者 | 技术爱好者 | 未来计算机工程师 | 诗人" data-es="Pre-Becaria Open Dreams | Embajadora Intentional School Summit | Voluntaria TiC Summit | Entusiasta de la Tecnología | Futura Ingeniera Informática | Poeta">Open Dreams Pre-Scholar | Intentional School Summit Ambassador | TiC Summit Volunteer | Tech Enthusiast | Future Computer Engineer | Poet</p>
+                    <div class="member-links">
+                        <a href="https://linkedin.com/in/chang-nelly-a367a8383" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="team-member hidden-team">
+                    <img src="images/Members/Nyingcho Bianca.png" alt="Nyingcho Bianca" class="member-photo">
+                    <h3>Bianca (Adih) Nyingcho</h3>
+                    <p class="role fire-text">Opportunity Scout Coordinator</p>
+                    <p data-en="Community engagement specialist focused on opportunity identification and member support" data-fr="Spécialiste de l'engagement communautaire axée sur l'identification des opportunités et le soutien aux membres" data-de="Spezialistin für Community-Engagement mit Fokus auf Chancenidentifikation und Mitgliederunterstützung" data-zh="专注于机会识别和成员支持的社区参与专家" data-es="Especialista en participación comunitaria enfocada en identificación de oportunidades y apoyo a miembros">Community engagement specialist focused on opportunity identification and member support</p>
+                    <div class="member-links">
+                        <a href="https://linkedin.com/in/bianca-nyingcho-137ba936a" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="team-member hidden-team">
+                    <img src="images/Members/Travis Wuwih.jpeg" alt="Travis (Berinyuy) Wuwih" class="member-photo">
+                    <h3>Travis (Berinyuy) Wuwih</h3>
+                    <p class="role fire-text">Opportunity Scout Coordinator</p>
+                    <p data-en="Aspiring Electrical & Electronics Engineer | Jumpstart Academy Scholar & Volunteer | ACT Foundation Volunteer | Rising Therapist" data-fr="Ingénieur Électrique et Électronique Aspirant | Boursier et Bénévole Jumpstart Academy | Bénévole ACT Foundation | Thérapeute Émergent" data-de="Angehender Elektro- und Elektronikingenieur | Jumpstart Academy Scholar & Freiwilliger | ACT Foundation Freiwilliger | Aufstrebender Therapeut" data-zh="有抱负的电气和电子工程师 | Jumpstart Academy学者和志愿者 | ACT Foundation志愿者 | 新兴治疗师" data-es="Aspirante a Ingeniero Eléctrico y Electrónico | Becario y Voluntario Jumpstart Academy | Voluntario ACT Foundation | Terapeuta Emergente">Aspiring Electrical & Electronics Engineer | Jumpstart Academy Scholar & Volunteer | ACT Foundation Volunteer | Rising Therapist</p>
+                    <div class="member-links">
+                        <a href="https://linkedin.com/in/travis-wuwih-163b09323" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="team-member hidden-team">
+                    <img src="images/Members/Lontchi Leticia.jpeg" alt="Lontchi Leticia Kenne" class="member-photo">
+                    <h3>Lontchi Leticia Kenne</h3>
+                    <p class="role fire-text">Partnership & Outreach Coordinator</p>
+                    <p data-en="Aspiring Biomedical Engineer | Medical Robotics Enthusiast | Open Dreams Pre-scholar | Jumpstart Academy Africa Scholar | Gender Equality Advocate" data-fr="Ingénieure Biomédicale Aspirante | Passionnée de Robotique Médicale | Pré-Boursière Open Dreams | Boursière Jumpstart Academy Africa | Défenseure de l'Égalité des Genres" data-de="Angehende Biomediziningenieurin | Medizinische Robotik-Enthusiastin | Open Dreams Pre-Scholar | Jumpstart Academy Africa Scholar | Befürworterin der Geschlechtergleichstellung" data-zh="有抱负的生物医学工程师 | 医疗机器人爱好者 | Open Dreams预科学者 | Jumpstart Academy Africa学者 | 性别平等倡导者" data-es="Aspirante a Ingeniera Biomédica | Entusiasta de la Robótica Médica | Pre-Becaria Open Dreams | Becaria Jumpstart Academy Africa | Defensora de la Igualdad de Género">Aspiring Biomedical Engineer | Medical Robotics Enthusiast | Open Dreams Pre-scholar | Jumpstart Academy Africa Scholar | Gender Equality Advocate</p>
+                    <div class="member-links">
+                        <a href="https://linkedin.com/in/lontchi-leticia-kenne-554a88318" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-actions">
+                <button class="btn-secondary" id="showMoreTeam" onclick="toggleTeam()" data-en="See More Team" data-fr="Voir Plus d'Équipe" data-de="Mehr Team Sehen" data-zh="查看更多团队" data-es="Ver Más Equipo">See More Team</button>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Mentors Section -->
+    <section id="mentors" class="mentors">
+        <div class="container">
+            <h2 class="section-title fire-text" data-en="Mentors & Industry Experts" data-fr="Mentors et Experts de l'Industrie" data-de="Mentoren und Branchenexperten" data-zh="导师和行业专家" data-es="Mentores y Expertos de la Industria">Mentors & Industry Experts</h2>
+            <div class="mentors-grid" id="mentorsGrid">
+                <div class="mentor-card">
+                    <img src="images/mentors & experts/Muluh Godson.jpeg" alt="Muluh MG Godson Ndahi" class="mentor-photo">
+                    <h4>Muluh MG Godson Ndahi</h4>
+                    <p class="mentor-role" data-en="Award-winning Computer Science Teacher & Software Developer" data-fr="Enseignant en Informatique Primé et Développeur Logiciel" data-de="Preisgekrönter Informatiklehrer und Softwareentwickler" data-zh="获奖计算机科学教师和软件开发者" data-es="Profesor de Ciencias de la Computación Galardonado y Desarrollador de Software">Award-winning Computer Science Teacher & Software Developer</p>
+                    <p data-en="Founder of Ndahi Start-up Company | Firebase Competition Winner 2024 | Pedagogic Inspector of Computer Science" data-fr="Fondateur de Ndahi Start-up Company | Gagnant de la Compétition Firebase 2024 | Inspecteur Pédagogique en Informatique" data-de="Gründer von Ndahi Start-up Company | Firebase-Wettbewerb Gewinner 2024 | Pädagogischer Inspektor für Informatik" data-zh="Ndahi创业公司创始人 | 2024年Firebase竞赛获胜者 | 计算机科学教学督察" data-es="Fundador de Ndahi Start-up Company | Ganador de la Competencia Firebase 2024 | Inspector Pedagógico de Ciencias de la Computación">Founder of Ndahi Start-up Company | Firebase Competition Winner 2024 | Pedagogic Inspector of Computer Science</p>
+                </div>
+                <div class="mentor-card">
+                    <img src="images/mentors & experts/Ida Delphine.jpeg" alt="Ida Delphine" class="mentor-photo">
+                    <h4>Ida Delphine</h4>
+                    <p class="mentor-role" data-en="Software Engineer | Cloud Engineer | GDE (Google Cloud)" data-fr="Ingénieure Logiciel | Ingénieure Cloud | GDE (Google Cloud)" data-de="Softwareingenieurin | Cloud-Ingenieurin | GDE (Google Cloud)" data-zh="软件工程师 | 云工程师 | GDE (Google Cloud)" data-es="Ingeniera de Software | Ingeniera Cloud | GDE (Google Cloud)">Software Engineer | Cloud Engineer | GDE (Google Cloud)</p>
+                    <p data-en="Open Source Advocate | Women Techmakers Ambassador" data-fr="Défenseure de l'Open Source | Ambassadrice Women Techmakers" data-de="Open-Source-Befürworterin | Women Techmakers Botschafterin" data-zh="开源倡导者 | Women Techmakers大使" data-es="Defensora del Código Abierto | Embajadora Women Techmakers">Open Source Advocate | Women Techmakers Ambassador</p>
+                    <div class="mentor-links">
+                        <a href="https://linkedin.com/in/idadelveloper" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://idadelveloper.com" target="_blank"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+                <div class="mentor-card">
+                    <img src="images/mentors & experts/Steve Yonkei.jpeg" alt="Steve Yonkeu" class="mentor-photo">
+                    <h4>Steve Yonkeu</h4>
+                    <p class="mentor-role" data-en="Software Engineer • Photographer • Cloud • Applied ML" data-fr="Ingénieur Logiciel • Photographe • Cloud • ML Appliqué" data-de="Softwareingenieur • Fotograf • Cloud • Angewandtes ML" data-zh="软件工程师 • 摄影师 • 云计算 • 应用机器学习" data-es="Ingeniero de Software • Fotógrafo • Cloud • ML Aplicado">Software Engineer • Photographer • Cloud • Applied ML</p>
+                    <p data-en="Django Software Foundation • Python Software Foundation • Apache • Data Engineering • Community Architect" data-fr="Django Software Foundation • Python Software Foundation • Apache • Ingénierie des Données • Architecte Communautaire" data-de="Django Software Foundation • Python Software Foundation • Apache • Datentechnik • Community-Architekt" data-zh="Django软件基金会 • Python软件基金会 • Apache • 数据工程 • 社区架构师" data-es="Django Software Foundation • Python Software Foundation • Apache • Ingeniería de Datos • Arquitecto Comunitario">Django Software Foundation • Python Software Foundation • Apache • Data Engineering • Community Architect</p>
+                    <div class="mentor-links">
+                        <a href="https://www.linkedin.com/in/yokwejuste/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://yokwejuste.me" target="_blank"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+                <div class="mentor-card hidden-mentor">
+                    <img src="images/mentors & experts/Delia ayoko.jpeg" alt="Delia Ayoko" class="mentor-photo">
+                    <h4>Delia Ayoko</h4>
+                    <p class="mentor-role" data-en="AWS Community Builder in AI/ML(4x) | Data Scientist" data-fr="AWS Community Builder en IA/ML(4x) | Data Scientist" data-de="AWS Community Builder in KI/ML(4x) | Datenwissenschaftlerin" data-zh="AWS社区构建者AI/ML(4x) | 数据科学家" data-es="AWS Community Builder en IA/ML(4x) | Científica de Datos">AWS Community Builder in AI/ML(4x) | Data Scientist</p>
+                    <p data-en="AWS Cloud Club Captain '23-25 | AWS User Group Leader | AWS SME, ML/AI" data-fr="Capitaine AWS Cloud Club '23-25 | Leader AWS User Group | Experte AWS, ML/IA" data-de="AWS Cloud Club Kapitänin '23-25 | AWS User Group Leiterin | AWS-Expertin, ML/KI" data-zh="AWS云俱乐部队长'23-25 | AWS用户组领导者 | AWS专家, ML/AI" data-es="Capitana AWS Cloud Club '23-25 | Líder AWS User Group | Experta AWS, ML/IA">AWS Cloud Club Captain '23-25 | AWS User Group Leader | AWS SME, ML/AI</p>
+                    <div class="mentor-links">
+                        <a href="https://www.linkedin.com/in/delia-ayoko" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://deliarticles.netlify.app" target="_blank"><i class="fas fa-blog"></i></a>
+                    </div>
+                </div>
+                <div class="mentor-card hidden-mentor">
+                    <img src="images/mentors & experts/Lynetter mumandam.jpeg" alt="Lynette Mumandam" class="mentor-photo">
+                    <h4>Lynette Mumandam</h4>
+                    <p class="mentor-role" data-en="Cybersecurity Analyst | Software Engineer | IAM Analyst" data-fr="Analyste en Cybersécurité | Ingénieure Logiciel | Analyste IAM" data-de="Cybersicherheitsanalystin | Softwareingenieurin | IAM-Analystin" data-zh="网络安全分析师 | 软件工程师 | IAM分析师" data-es="Analista de Ciberseguridad | Ingeniera de Software | Analista IAM">Cybersecurity Analyst | Software Engineer | IAM Analyst</p>
+                    <p data-en="Network Defender | Database Administrator | GDG Bamenda Organizer" data-fr="Défenseure de Réseau | Administratrice de Base de Données | Organisatrice GDG Bamenda" data-de="Netzwerkverteidigerin | Datenbankadministratorin | GDG Bamenda Organisatorin" data-zh="网络防御者 | 数据库管理员 | GDG Bamenda组织者" data-es="Defensora de Redes | Administradora de Bases de Datos | Organizadora GDG Bamenda">Network Defender | Database Administrator | GDG Bamenda Organizer</p>
+                    <div class="mentor-links">
+                        <a href="https://linkedin.com/in/lynette-mumandam-091810285" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="mentor-card hidden-mentor">
+                    <img src="images/mentors & experts/ Ndoh Ida.jpeg" alt="Ndoh Ida Pih" class="mentor-photo">
+                    <h4>Ndoh Ida Pih</h4>
+                    <p class="mentor-role" data-en="Communications & PR | Youth, Peace & Security Specialist" data-fr="Communications et RP | Spécialiste Jeunesse, Paix et Sécurité" data-de="Kommunikation & PR | Jugend-, Friedens- und Sicherheitsspezialistin" data-zh="传播与公关 | 青年、和平与安全专家" data-es="Comunicaciones y RP | Especialista en Juventud, Paz y Seguridad">Communications & PR | Youth, Peace & Security Specialist</p>
+                    <p data-en="Founder & President, BOLD Impact Foundation | 'Youth Champion for Change' – Cameroon Youth Awards 2025" data-fr="Fondatrice et Présidente, BOLD Impact Foundation | 'Championne de la Jeunesse pour le Changement' – Prix de la Jeunesse Camerounaise 2025" data-de="Gründerin und Präsidentin, BOLD Impact Foundation | 'Jugendchampion für Veränderung' – Kamerun Jugendpreise 2025" data-zh="创始人兼主席, BOLD Impact Foundation | '青年变革冠军' – 2025年喀麦隆青年奖" data-es="Fundadora y Presidenta, BOLD Impact Foundation | 'Campeona Juvenil del Cambio' – Premios Juventud Camerunesa 2025">Founder & President, BOLD Impact Foundation | "Youth Champion for Change" – Cameroon Youth Awards 2025</p>
+                    <div class="mentor-links">
+                        <a href="https://linkedin.com/in/ndoh-ida-pih-b582091aa" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="mentor-card hidden-mentor">
+                    <img src="images/mentors & experts/Tendoh Katlyn.jpeg" alt="Katlyn Lindsy Tinga Tendoh" class="mentor-photo">
+                    <h4>Katlyn Lindsy Tinga Tendoh</h4>
+                    <p class="mentor-role" data-en="Education Prefect | Tech Enthusiast | Climate Change Advocate" data-fr="Préfète de l'Éducation | Passionnée de Technologie | Défenseure du Changement Climatique" data-de="Bildungspräfektin | Tech-Enthusiastin | Klimaschutzaktivistin" data-zh="教育长官 | 技术爱好者 | 气候变化倡导者" data-es="Prefecta de Educación | Entusiasta de la Tecnología | Defensora del Cambio Climático">Education Prefect | Tech Enthusiast | Climate Change Advocate</p>
+                    <p data-en="YYAS'25 | TIC Summit Finalist '25 | ID TECH Scholar'25 | Founder of Rooted to Rise and Rewire" data-fr="YYAS'25 | Finaliste TIC Summit '25 | Boursière ID TECH'25 | Fondatrice de Rooted to Rise et Rewire" data-de="YYAS'25 | TIC Summit Finalistin '25 | ID TECH Scholar'25 | Gründerin von Rooted to Rise und Rewire" data-zh="YYAS'25 | TIC峰会决赛选手'25 | ID TECH学者'25 | Rooted to Rise和Rewire创始人" data-es="YYAS'25 | Finalista TIC Summit '25 | Becaria ID TECH'25 | Fundadora de Rooted to Rise y Rewire">YYAS'25 | TIC Summit Finalist '25 | ID TECH Scholar'25 | Founder of Rooted to Rise and Rewire</p>
+                    <div class="mentor-links">
+                        <a href="https://linkedin.com/in/katlyn-lindsy-tinga-tendoh-5b9b39377" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="mentor-card hidden-mentor">
+                    <img src="images/mentors & experts/Miriam.jpeg" alt="NFOR Miriam Asohnyu" class="mentor-photo">
+                    <h4>NFOR Miriam Asohnyu</h4>
+                    <p class="mentor-role" data-en="Robotics Engineering | Educational Policy-Making | Design Thinking Facilitator" data-fr="Ingénierie Robotique | Élaboration de Politiques Éducatives | Facilitatrice Design Thinking" data-de="Robotik-Ingenieurwesen | Bildungspolitikgestaltung | Design Thinking Facilitatorin" data-zh="机器人工程 | 教育政策制定 | 设计思维促进者" data-es="Ingeniería Robótica | Elaboración de Políticas Educativas | Facilitadora de Design Thinking">Robotics Engineering | Educational Policy-Making | Design Thinking Facilitator</p>
+                    <p data-en="Open Dreams Scholar | YMAU V Ambassador | Sparte Robotics | National Higher Polytechnic School of Douala" data-fr="Boursière Open Dreams | Ambassadrice YMAU V | Sparte Robotics | École Nationale Supérieure Polytechnique de Douala" data-de="Open Dreams Scholar | YMAU V Botschafterin | Sparte Robotics | Nationale Höhere Polytechnische Schule von Douala" data-zh="Open Dreams学者 | YMAU V大使 | Sparte Robotics | 杜阿拉国家高等理工学院" data-es="Becaria Open Dreams | Embajadora YMAU V | Sparte Robotics | Escuela Nacional Superior Politécnica de Duala">Open Dreams Scholar | YMAU V Ambassador | Sparte Robotics | National Higher Polytechnic School of Douala</p>
+                    <div class="mentor-links">
+                        <a href="https://linkedin.com/in/nfor-miriam-asohnyu" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="mentor-card hidden-mentor">
+                    <img src="images/mentors & experts/Manfred Agha.jpeg" alt="Manfred Agha" class="mentor-photo">
+                    <h4>Manfred Agha</h4>
+                    <p class="mentor-role" data-en="Founder of IGB & DV2S | Robotics Instructor" data-fr="Fondateur d'IGB & DV2S | Instructeur en Robotique" data-de="Gründer von IGB & DV2S | Robotik-Instruktor" data-zh="IGB和DV2S创始人 | 机器人教练" data-es="Fundador de IGB & DV2S | Instructor de Robótica">Founder of IGB & DV2S | Robotics Instructor</p>
+                    <p data-en="Intelligent Glasses for the Blind Creator | The Vision To Success Founder | Robotics Content Creator" data-fr="Créateur de Lunettes Intelligentes pour Aveugles | Fondateur de The Vision To Success | Créateur de Contenu Robotique" data-de="Schöpfer von Intelligenten Brillen für Blinde | Gründer von The Vision To Success | Robotik-Content-Ersteller" data-zh="盲人智能眼镜创造者 | The Vision To Success创始人 | 机器人内容创作者" data-es="Creador de Gafas Inteligentes para Ciegos | Fundador de The Vision To Success | Creador de Contenido de Robótica">Intelligent Glasses for the Blind Creator | The Vision To Success Founder | Robotics Content Creator</p>
+                    <div class="mentor-links">
+                        <a href="https://www.linkedin.com/in/manfred-agha-20319b290/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mentors-actions">
+                <button class="btn-secondary" id="showMoreMentors" onclick="toggleMentors()" data-en="See More Mentors" data-fr="Voir Plus de Mentors" data-de="Mehr Mentoren Sehen" data-zh="查看更多导师" data-es="Ver Más Mentores">See More Mentors</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="partners">
+        <div class="container">
+            <h2 class="section-title fire-text" data-en="Our Partners" data-fr="Nos Partenaires" data-de="Unsere Partner" data-zh="我们的合作伙伴" data-es="Nuestros Socios">Our Partners</h2>
+            <div class="partners-logos">
+                <a href="https://ndahi.com" target="_blank" class="partner-logo">
+                    <img src="images/Partners/ndahi.jpeg" alt="Ndahi" class="partner-img">
+                </a>
+                <a href="https://iymc.info" target="_blank" class="partner-logo">
+                    <img src="images/Partners/iymc.jpeg" alt="IYMC" class="partner-img">
+                </a>
+                <a href="https://icscompetition.org" target="_blank" class="partner-logo">
+                    <img src="images/Partners/ICSC.png" alt="ICSC" class="partner-img">
+                </a>
+                <a href="#" target="_blank" class="partner-logo">
+                    <img src="images/Partners/GDG.jpeg" alt="GDG" class="partner-img">
+                </a>
+                <a href="#" target="_blank" class="partner-logo">
+                    <img src="images/Partners/Roooted to Rise.jpeg" alt="Rooted to Rise" class="partner-img">
+                </a>
+                <a href="#" target="_blank" class="partner-logo">
+                    <img src="images/Partners/LitVerse.jpg" alt="LitVerse" class="partner-img">
+                </a>
+            </div>
+            <div class="partnership-cta">
+                <h3 data-en="Become a Partner" data-fr="Devenez Partenaire" data-de="Partner Werden" data-zh="成为合作伙伴" data-es="Conviértete en Socio">Become a Partner</h3>
+                <p data-en="Join us in empowering Cameroonian youth with opportunities" data-fr="Rejoignez-nous pour autonomiser les jeunes camerounais avec des opportunités" data-de="Schließen Sie sich uns an, um kamerunische Jugendliche mit Möglichkeiten zu stärken" data-zh="加入我们，为喀麦隆青年提供机会" data-es="Únete a nosotros para empoderar a los jóvenes cameruneses con oportunidades">Join us in empowering Cameroonian youth with opportunities</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScOp7K1cMMPpb4aSXXgEiyXB3scHmv9razBLW_Up17jch8erQ/viewform" target="_blank" class="btn-primary" data-en="Partner With Us" data-fr="Partenariat avec Nous" data-de="Partner mit Uns" data-zh="与我们合作" data-es="Asociarse con Nosotros">Partner With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apply Section -->
+    <section id="apply" class="apply">
+        <div class="container">
+            <h2 class="section-title fire-text" data-en="Join Our Mission" data-fr="Rejoignez Notre Mission" data-de="Schließen Sie Sich Unserer Mission An" data-zh="加入我们的使命" data-es="Únete a Nuestra Misión">Join Our Mission</h2>
+            <div class="apply-grid">
+                <div class="apply-option">
+                    <i class="fas fa-flag"></i>
+                    <h3 data-en="Become an Ambassador" data-fr="Devenez Ambassadeur" data-de="Botschafter Werden" data-zh="成为大使" data-es="Conviértete en Embajador">Become an Ambassador</h3>
+                    <p data-en="Represent LaunchPad in your university or region" data-fr="Représentez LaunchPad dans votre université ou région" data-de="Vertreten Sie LaunchPad an Ihrer Universität oder Region" data-zh="在您的大学或地区代表LaunchPad" data-es="Representa a LaunchPad en tu universidad o región">Represent LaunchPad in your university or region</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOdxkQ2OLoaHmuWBBf8IV1u1g0-yvO3K43Xmu856m9kH3LBw/viewform" target="_blank" class="btn-secondary" data-en="Apply Now" data-fr="Postuler Maintenant" data-de="Jetzt Bewerben" data-zh="立即申请" data-es="Aplicar Ahora">Apply Now</a>
+                </div>
+                <div class="apply-option">
+                    <i class="fas fa-search"></i>
+                    <h3 data-en="Become a Scout" data-fr="Devenez Éclaireur" data-de="Scout Werden" data-zh="成为侦察员" data-es="Conviértete en Explorador">Become a Scout</h3>
+                    <p data-en="Help us discover and share new opportunities" data-fr="Aidez-nous à découvrir et partager de nouvelles opportunités" data-de="Helfen Sie uns, neue Möglichkeiten zu entdecken und zu teilen" data-zh="帮助我们发现和分享新机会" data-es="Ayúdanos a descubrir y compartir nuevas oportunidades">Help us discover and share new opportunities</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfv5BsSH59O74K6g6lRG976TBsqyS_MqU4GnGe1ck-gJS8MJw/viewform" target="_blank" class="btn-secondary" data-en="Apply Now" data-fr="Postuler Maintenant" data-de="Jetzt Bewerben" data-zh="立即申请" data-es="Aplicar Ahora">Apply Now</a>
+                </div>
+                <div class="apply-option">
+                    <i class="fas fa-handshake"></i>
+                    <h3 data-en="Sponsor Us" data-fr="Sponsorisez-Nous" data-de="Sponsern Sie Uns" data-zh="赞助我们" data-es="Patrócinos">Sponsor Us</h3>
+                    <p data-en="Support our mission to empower youth" data-fr="Soutenez notre mission d'autonomisation des jeunes" data-de="Unterstützen Sie unsere Mission, Jugendliche zu stärken" data-zh="支持我们赋能青年的使命" data-es="Apoya nuestra misión de empoderar a los jóvenes">Support our mission to empower youth</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIjv2-v0bH0OQnCojpjqwm-SHe7j8VEPrx9Ish4w1TLcrXmw/viewform" target="_blank" class="btn-secondary" data-en="Get Involved" data-fr="S'Impliquer" data-de="Mitmachen" data-zh="参与其中" data-es="Involucrarse">Get Involved</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guidelines Section -->
+    <section id="guidelines" class="guidelines">
+        <div class="container">
+            <h2 class="section-title fire-text" data-en="Community Guidelines" data-fr="Directives Communautaires" data-de="Gemeinschaftsrichtlinien" data-zh="社区指导方针" data-es="Pautas de la Comunidad">Community Guidelines</h2>
+            <div class="guidelines-content">
+                <div class="rules-section">
+                    <h3 data-en="📌 Rules and Regulations" data-fr="📌 Règles et Réglementations" data-de="📌 Regeln und Vorschriften" data-zh="📌 规则和条例" data-es="📌 Reglas y Regulaciones">📌 Rules and Regulations</h3>
+                    <ol>
+                        <li data-en="All links to be sent to the community must pass through an admin to verify integrity" data-fr="Tous les liens à envoyer à la communauté doivent passer par un administrateur pour vérifier l'intégrité" data-de="Alle Links, die an die Gemeinschaft gesendet werden, müssen durch einen Administrator gehen, um die Integrität zu überprüfen" data-zh="发送到社区的所有链接必须通过管理员验证完整性" data-es="Todos los enlaces que se envíen a la comunidad deben pasar por un administrador para verificar la integridad">All links to be sent to the community must pass through an admin to verify integrity</li>
+                        <li data-en="Always read through information posted before asking questions" data-fr="Lisez toujours les informations publiées avant de poser des questions" data-de="Lesen Sie immer die veröffentlichten Informationen, bevor Sie Fragen stellen" data-zh="在提问之前，请务必阅读发布的信息" data-es="Siempre lee la información publicada antes de hacer preguntas">Always read through information posted before asking questions</li>
+                        <li data-en="Stay on topic. Each group has a specific purpose - abide by them" data-fr="Restez dans le sujet. Chaque groupe a un objectif spécifique - respectez-les" data-de="Bleiben Sie beim Thema. Jede Gruppe hat einen bestimmten Zweck - halten Sie sich daran" data-zh="保持主题。每个小组都有特定的目的 - 请遵守" data-es="Mantente en el tema. Cada grupo tiene un propósito específico - respétalos">Stay on topic. Each group has a specific purpose - abide by them</li>
+                        <li data-en="Be patient and polite when asking or answering questions" data-fr="Soyez patient et poli lorsque vous posez ou répondez aux questions" data-de="Seien Sie geduldig und höflich beim Stellen oder Beantworten von Fragen" data-zh="在提问或回答问题时要耐心和礼貌" data-es="Sé paciente y educado al hacer o responder preguntas">Be patient and polite when asking or answering questions</li>
+                        <li data-en="Respect one another and maintain composure" data-fr="Respectez-vous mutuellement et gardez votre sang-froid" data-de="Respektieren Sie einander und bewahren Sie Fassung" data-zh="相互尊重并保持冷静" data-es="Respétense mutuamente y mantengan la compostura">Respect one another and maintain composure</li>
+                    </ol>
+                </div>
+                
+                <div class="group-purposes">
+                    <h3 data-en="Group Purposes" data-fr="Objectifs des Groupes" data-de="Gruppenzwecke" data-zh="小组目的" data-es="Propósitos de los Grupos">Group Purposes</h3>
+                    <div class="purpose-grid">
+                        <div class="purpose-item group-with-logo">
+                            <img src="images/logos/science and innovation.jpeg" alt="Science & Tech" class="purpose-logo">
+                            <h4 data-en="🔬 Science, Technology & Innovation" data-fr="🔬 Science, Technologie et Innovation" data-de="🔬 Wissenschaft, Technologie und Innovation" data-zh="🔬 科学、技术与创新" data-es="🔬 Ciencia, Tecnología e Innovación">🔬 Science, Technology & Innovation</h4>
+                            <p data-en="For those interested in technology, engineering, innovation, and STEM-related opportunities." data-fr="Pour ceux qui s'intéressent à la technologie, à l'ingénierie, à l'innovation et aux opportunités liées aux STEM." data-de="Für diejenigen, die sich für Technologie, Ingenieurwesen, Innovation und STEM-bezogene Möglichkeiten interessieren." data-zh="适合对技术、工程、创新和STEM相关机会感兴趣的人。" data-es="Para aquellos interesados en tecnología, ingeniería, innovación y oportunidades relacionadas con STEM.">For those interested in technology, engineering, innovation, and STEM-related opportunities.</p>
+                        </div>
+                        <div class="purpose-item group-with-logo">
+                            <img src="images/logos/health and nursing.jpeg" alt="Health & Medicine" class="purpose-logo">
+                            <h4 data-en="🏥 Health, Medicine & Nursing" data-fr="🏥 Santé, Médecine et Soins Infirmiers" data-de="🏥 Gesundheit, Medizin und Pflege" data-zh="🏥 健康、医学与护理" data-es="🏥 Salud, Medicina y Enfermería">🏥 Health, Medicine & Nursing</h4>
+                            <p data-en="For medical, nursing, public health, and health science pathways." data-fr="Pour les parcours médicaux, infirmiers, de santé publique et de sciences de la santé." data-de="Für medizinische, pflegerische, öffentliche Gesundheits- und Gesundheitswissenschaftswege." data-zh="适合医学、护理、公共卫生和健康科学路径。" data-es="Para trayectorias médicas, de enfermería, salud pública y ciencias de la salud.">For medical, nursing, public health, and health science pathways.</p>
+                        </div>
+                        <div class="purpose-item group-with-logo">
+                            <img src="images/logos/writing, and creative arts.jpeg" alt="Arts & Creative" class="purpose-logo">
+                            <h4 data-en="✍️ Writing, Cultural & Creative Arts" data-fr="✍️ Écriture, Arts Culturels et Créatifs" data-de="✍️ Schreiben, Kulturelle und Kreative Künste" data-zh="✍️ 写作、文化与创意艺术" data-es="✍️ Escritura, Artes Culturales y Creativas">✍️ Writing, Cultural & Creative Arts</h4>
+                            <p data-en="For writers, designers, artists, filmmakers, performers, and content creators." data-fr="Pour les écrivains, designers, artistes, cinéastes, interprètes et créateurs de contenu." data-de="Für Schriftsteller, Designer, Künstler, Filmemacher, Darsteller und Content-Ersteller." data-zh="适合作家、设计师、艺术家、电影制作人、表演者和内容创作者。" data-es="Para escritores, diseñadores, artistas, cineastas, intérpretes y creadores de contenido.">For writers, designers, artists, filmmakers, performers, and content creators.</p>
+                        </div>
+                        <div class="purpose-item group-with-logo">
+                            <img src="images/logos/academics and scholarships.jpeg" alt="Academics & Scholarships" class="purpose-logo">
+                            <h4 data-en="🎓 Academics & Scholarships" data-fr="🎓 Académiques et Bourses" data-de="🎓 Akademisches und Stipendien" data-zh="🎓 学术与奖学金" data-es="🎓 Académicos y Becas">🎓 Academics & Scholarships</h4>
+                            <p data-en="For students seeking scholarships, exchange programs, fellowships, and academic growth opportunities, plus application tips and deadline reminders." data-fr="Pour les étudiants cherchant des bourses, programmes d'échange, bourses de recherche et opportunités de croissance académique, plus des conseils d'application et rappels de dates limites." data-de="Für Studenten, die Stipendien, Austauschprogramme, Stipendien und akademische Wachstumsmöglichkeiten suchen, plus Bewerbungstipps und Erinnerungen an Fristen." data-zh="适合寻求奖学金、交换项目、研究金和学术成长机会的学生，以及申请技巧和截止日期提醒。" data-es="Para estudiantes que buscan becas, programas de intercambio, becas de investigación y oportunidades de crecimiento académico, además de consejos de aplicación y recordatorios de fechas límite.">For students seeking scholarships, exchange programs, fellowships, and academic growth opportunities, plus application tips and deadline reminders.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group-guidelines">
+                    <h4 data-en="✅ How to Choose the Right Group" data-fr="✅ Comment Choisir le Bon Groupe" data-de="✅ Wie Man die Richtige Gruppe Wählt" data-zh="✅ 如何选择合适的小组" data-es="✅ Cómo Elegir el Grupo Correcto">✅ How to Choose the Right Group</h4>
+                    <ul>
+                        <li data-en="Join the group that matches your current goals, not just interests" data-fr="Rejoignez le groupe qui correspond à vos objectifs actuels, pas seulement à vos intérêts" data-de="Treten Sie der Gruppe bei, die Ihren aktuellen Zielen entspricht, nicht nur Ihren Interessen" data-zh="加入符合您当前目标的小组，而不仅仅是兴趣" data-es="Únete al grupo que coincida con tus objetivos actuales, no solo con tus intereses">Join the group that matches your current goals, not just interests</li>
+                        <li data-en="Stick to one primary group if actively pursuing one path" data-fr="Restez dans un groupe principal si vous poursuivez activement une voie" data-de="Bleiben Sie bei einer Hauptgruppe, wenn Sie aktiv einen Weg verfolgen" data-zh="如果积极追求一条道路，请坚持一个主要小组" data-es="Mantente en un grupo principal si estás persiguiendo activamente un camino">Stick to one primary group if actively pursuing one path</li>
+                        <li data-en="Join at most two groups if genuinely balancing two paths" data-fr="Rejoignez au maximum deux groupes si vous équilibrez vraiment deux voies" data-de="Treten Sie höchstens zwei Gruppen bei, wenn Sie wirklich zwei Wege ausbalancieren" data-zh="如果真正平衡两条道路，最多加入两个小组" data-es="Únete a máximo dos grupos si realmente estás equilibrando dos caminos">Join at most two groups if genuinely balancing two paths</li>
+                        <li data-en="Avoid joining all groups—it leads to confusion and missed opportunities" data-fr="Évitez de rejoindre tous les groupes—cela mène à la confusion et aux opportunités manquées" data-de="Vermeiden Sie es, allen Gruppen beizutreten—es führt zu Verwirrung und verpassten Gelegenheiten" data-zh="避免加入所有小组——这会导致混乱和错失机会" data-es="Evita unirte a todos los grupos—lleva a confusión y oportunidades perdidas">Avoid joining all groups—it leads to confusion and missed opportunities</li>
+                    </ul>
+                    <p><strong data-en="Choose wisely. 🚀" data-fr="Choisissez judicieusement. 🚀" data-de="Wählen Sie weise. 🚀" data-zh="明智选择。🚀" data-es="Elige sabiamente. 🚀">Choose wisely. 🚀</strong></p>
+                </div>
+                
+                <div class="group-purposes">
+                    <h3 data-en="WhatsApp Community Structure" data-fr="Structure de la Communauté WhatsApp" data-de="WhatsApp-Gemeinschaftsstruktur" data-zh="WhatsApp社区结构" data-es="Estructura de la Comunidad WhatsApp">WhatsApp Community Structure</h3>
+                    <div class="purpose-grid">
+                        <div class="purpose-item">
+                            <h4 data-en="📢 Announcements" data-fr="📢 Annonces" data-de="📢 Ankündigungen" data-zh="📢 公告" data-es="📢 Anuncios">📢 Announcements</h4>
+                            <p data-en="Important announcements concerning LaunchPad Community and groundbreaking events" data-fr="Annonces importantes concernant la Communauté LaunchPad et événements révolutionnaires" data-de="Wichtige Ankündigungen bezüglich der LaunchPad-Gemeinschaft und bahnbrechende Ereignisse" data-zh="关于LaunchPad社区和突破性事件的重要公告" data-es="Anuncios importantes sobre la Comunidad LaunchPad y eventos revolucionarios">Important announcements concerning LaunchPad Community and groundbreaking events</p>
+                        </div>
+                        <div class="purpose-item">
+                            <h4 data-en="🏠 Main Hub" data-fr="🏠 Hub Principal" data-de="🏠 Hauptzentrum" data-zh="🏠 主中心" data-es="🏠 Centro Principal">🏠 Main Hub</h4>
+                            <p data-en="Hosting LaunchPad sessions, quizzes and talks from our incredible partners, asking questions, finding collaborators, sharing resources, and getting guidance" data-fr="Hébergement des sessions LaunchPad, quiz et conférences de nos partenaires incroyables, poser des questions, trouver des collaborateurs, partager des ressources et obtenir des conseils" data-de="Hosting von LaunchPad-Sitzungen, Quiz und Vorträgen unserer unglaublichen Partner, Fragen stellen, Mitarbeiter finden, Ressourcen teilen und Beratung erhalten" data-zh="举办LaunchPad会议、测验和来自我们优秀合作伙伴的讲座，提问、寻找合作者、分享资源和获得指导" data-es="Alojando sesiones de LaunchPad, cuestionarios y charlas de nuestros increíbles socios, hacer preguntas, encontrar colaboradores, compartir recursos y obtener orientación">Hosting LaunchPad sessions, quizzes and talks from our incredible partners, asking questions, finding collaborators, sharing resources, and getting guidance</p>
+                        </div>
+                        <div class="purpose-item">
+                            <h4 data-en="📊 IYMC Prep Group" data-fr="📊 Groupe de Préparation IYMC" data-de="📊 IYMC-Vorbereitungsgruppe" data-zh="📊 IYMC准备小组" data-es="📊 Grupo de Preparación IYMC">📊 IYMC Prep Group</h4>
+                            <p data-en="International Youth Math Challenge preparation" data-fr="Préparation au Défi International de Mathématiques pour Jeunes" data-de="Vorbereitung auf die International Youth Math Challenge" data-zh="国际青年数学挑战赛准备" data-es="Preparación para el Desafío Internacional de Matemáticas para Jóvenes">International Youth Math Challenge preparation</p>
+                        </div>
+                        <div class="purpose-item">
+                            <h4 data-en="💻 ICSC Prep Group" data-fr="💻 Groupe de Préparation ICSC" data-de="💻 ICSC-Vorbereitungsgruppe" data-zh="💻 ICSC准备小组" data-es="💻 Grupo de Preparación ICSC">💻 ICSC Prep Group</h4>
+                            <p data-en="International Computer Science Competition prep" data-fr="Préparation à la Compétition Internationale d'Informatique" data-de="Vorbereitung auf den International Computer Science Competition" data-zh="国际计算机科学竞赛准备" data-es="Preparación para la Competencia Internacional de Ciencias de la Computación">International Computer Science Competition prep</p>
+                        </div>
+                        <div class="purpose-item">
+                            <h4 data-en="🔬 Science, Technology & Innovation" data-fr="🔬 Science, Technologie et Innovation" data-de="🔬 Wissenschaft, Technologie und Innovation" data-zh="🔬 科学、技术与创新" data-es="🔬 Ciencia, Tecnología e Innovación">🔬 Science, Technology & Innovation</h4>
+                            <p data-en="Tech-related opportunities" data-fr="Opportunités liées à la technologie" data-de="Technologiebezogene Möglichkeiten" data-zh="技术相关机会" data-es="Oportunidades relacionadas con tecnología">Tech-related opportunities</p>
+                        </div>
+                        <div class="purpose-item">
+                            <h4 data-en="🏥 Health, Medicine & Nursing" data-fr="🏥 Santé, Médecine et Soins Infirmiers" data-de="🏥 Gesundheit, Medizin und Pflege" data-zh="🏥 健康、医学与护理" data-es="🏥 Salud, Medicina y Enfermería">🏥 Health, Medicine & Nursing</h4>
+                            <p data-en="Medical field opportunities" data-fr="Opportunités dans le domaine médical" data-de="Möglichkeiten im medizinischen Bereich" data-zh="医学领域机会" data-es="Oportunidades en el campo médico">Medical field opportunities</p>
+                        </div>
+                        <div class="purpose-item">
+                            <h4 data-en="✍️ Writing, Cultural & Creative Arts" data-fr="✍️ Écriture, Arts Culturels et Créatifs" data-de="✍️ Schreiben, Kulturelle und Kreative Künste" data-zh="✍️ 写作、文化与创意艺术" data-es="✍️ Escritura, Artes Culturales y Creativas">✍️ Writing, Cultural & Creative Arts</h4>
+                            <p data-en="Creative opportunities" data-fr="Opportunités créatives" data-de="Kreative Möglichkeiten" data-zh="创意机会" data-es="Oportunidades creativas">Creative opportunities</p>
+                        </div>
+                        <div class="purpose-item">
+                            <h4 data-en="🎓 Academics & Scholarships" data-fr="🎓 Académiques et Bourses" data-de="🎓 Akademisches und Stipendien" data-zh="🎓 学术与奖学金" data-es="🎓 Académicos y Becas">🎓 Academics & Scholarships</h4>
+                            <p data-en="Educational opportunities" data-fr="Opportunités éducatives" data-de="Bildungsmöglichkeiten" data-zh="教育机会" data-es="Oportunidades educativas">Educational opportunities</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="policy-links">
+                    <h3 data-en="Important Policies" data-fr="Politiques Importantes" data-de="Wichtige Richtlinien" data-zh="重要政策" data-es="Políticas Importantes">Important Policies</h3>
+                    <div class="policy-buttons">
+                        <button class="btn-secondary" onclick="showModal('privacyModal')" data-en="Privacy Policy" data-fr="Politique de Confidentialité" data-de="Datenschutzrichtlinie" data-zh="隐私政策" data-es="Política de Privacidad">Privacy Policy</button>
+                        <button class="btn-secondary" onclick="showModal('termsModal')" data-en="Terms of Service" data-fr="Conditions de Service" data-de="Nutzungsbedingungen" data-zh="服务条款" data-es="Términos de Servicio">Terms of Service</button>
+                        <button class="btn-secondary" onclick="showModal('ethicsModal')" data-en="Ethics & Conduct" data-fr="Éthique et Conduite" data-de="Ethik und Verhalten" data-zh="道德与行为" data-es="Ética y Conducta">Ethics & Conduct</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title fire-text">Get In Touch</h2>
+            <div class="contact-compact">
+                <div class="contact-row">
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4 data-en="Email" data-fr="Email" data-de="E-Mail" data-zh="邮箱" data-es="Correo">Email</h4>
+                                <p>LaunchPadCommunity00@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4 data-en="Phone" data-fr="Téléphone" data-de="Telefon" data-zh="电话" data-es="Teléfono">Phone</h4>
+                                <p>(+237) 690709635</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h4 data-en="WhatsApp Community" data-fr="Communauté WhatsApp" data-de="WhatsApp-Gemeinschaft" data-zh="WhatsApp社区" data-es="Comunidad WhatsApp">WhatsApp Community</h4>
+                                <a href="https://chat.whatsapp.com/JjhdS2otBQ1Ke3Bhlaf1tn" target="_blank" data-en="Join Now" data-fr="Rejoindre Maintenant" data-de="Jetzt Beitreten" data-zh="立即加入" data-es="Unirse Ahora">Join Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-media-section">
+                        <h4 data-en="Connect With Us" data-fr="Connectez-vous avec Nous" data-de="Verbinden Sie Sich mit Uns" data-zh="与我们联系" data-es="Conéctate con Nosotros">Connect With Us</h4>
+                        <div class="social-icons">
+                            <a href="https://x.com/LaunchPadGr0up" target="_blank" title="Twitter/X"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/launchpadc0mmunity" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/launchpad-community/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61584726481997" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="action-links">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScuZzdzdgytPmxsWuPRtrpJmgRfANw9TKgdy995TuY9O9_gDQ/viewform" target="_blank" class="btn-secondary" data-en="Send Feedback" data-fr="Envoyer des Commentaires" data-de="Feedback Senden" data-zh="发送反馈" data-es="Enviar Comentarios"><i class="fas fa-comment"></i> <span data-en="Send Feedback" data-fr="Envoyer des Commentaires" data-de="Feedback Senden" data-zh="发送反馈" data-es="Enviar Comentarios">Send Feedback</span></a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScuZzdzdgytPmxsWuPRtrpJmgRfANw9TKgdy995TuY9O9_gDQ/viewform" target="_blank" class="btn-secondary" data-en="Report Issue" data-fr="Signaler un Problème" data-de="Problem Melden" data-zh="报告问题" data-es="Reportar Problema"><i class="fas fa-flag"></i> <span data-en="Report Issue" data-fr="Signaler un Problème" data-de="Problem Melden" data-zh="报告问题" data-es="Reportar Problema">Report Issue</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription Modal -->
+    <div id="subscribeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 class="fire-text">Join Our Community</h3>
+            <p>Subscribe to receive updates about opportunities, events, and success stories</p>
+            <form id="subscribeForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number">
+                <select required>
+                    <option value="">Select Your Interest</option>
+                    <option value="scholarships">Scholarships</option>
+                    <option value="internships">Internships</option>
+                    <option value="competitions">Competitions</option>
+                    <option value="tech">Tech Programs</option>
+                    <option value="all">All Opportunities</option>
+                </select>
+                <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ambassador Application Modal -->
+    <div id="ambassadorModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 class="fire-text">Ambassador Application</h3>
+            <form id="ambassadorForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="text" placeholder="University/Organization" required>
+                <select required>
+                    <option value="">Ambassador Type</option>
+                    <option value="university">University Ambassador</option>
+                    <option value="regional">Regional Ambassador</option>
+                    <option value="online">Online Ambassador</option>
+                </select>
+                <textarea placeholder="Why do you want to be an ambassador?" required></textarea>
+                <button type="submit" class="btn-primary">Apply</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scout Application Modal -->
+    <div id="scoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 class="fire-text">Scout Application</h3>
+            <form id="scoutForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Scout Specialization</option>
+                    <option value="scholarships">Scholarship Scout</option>
+                    <option value="internships">Internship Scout</option>
+                    <option value="competitions">Competition Scout</option>
+                    <option value="tech">Tech Opportunity Scout</option>
+                </select>
+                <textarea placeholder="Describe your research skills and experience" required></textarea>
+                <button type="submit" class="btn-primary">Apply</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Partner Modal -->
+    <div id="partnerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 class="fire-text">Partnership Inquiry</h3>
+            <form id="partnerForm">
+                <input type="text" placeholder="Organization Name" required>
+                <input type="text" placeholder="Contact Person" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Partnership Type</option>
+                    <option value="scholarship">Scholarship Provider</option>
+                    <option value="internship">Internship Provider</option>
+                    <option value="education">Educational Institution</option>
+                    <option value="sponsor">Sponsor</option>
+                    <option value="mentor">Mentorship</option>
+                </select>
+                <textarea placeholder="Describe your partnership proposal" required></textarea>
+                <button type="submit" class="btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sponsor Modal -->
+    <div id="sponsorModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 class="fire-text">Sponsorship Inquiry</h3>
+            <form id="sponsorForm">
+                <input type="text" placeholder="Organization/Individual Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Sponsorship Type</option>
+                    <option value="financial">Financial Sponsorship</option>
+                    <option value="resources">Resource Sponsorship</option>
+                    <option value="event">Event Sponsorship</option>
+                    <option value="scholarship">Scholarship Sponsorship</option>
+                </select>
+                <textarea placeholder="Tell us about your sponsorship interests" required></textarea>
+                <button type="submit" class="btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content policy-modal">
+            <span class="close">&times;</span>
+            <h3 class="fire-text">Privacy Policy</h3>
+            <div class="policy-content">
+                <p><strong>Last Updated:</strong> December 5, 2024</p>
+                <h4>Information We Collect</h4>
+                <p>We collect information you provide when joining our community, applying for programs, or subscribing to our newsletter including name, email, phone number, and educational background.</p>
+                <h4>How We Use Information</h4>
+                <p>Your information is used to provide opportunities, send relevant updates, facilitate mentorship connections, and improve our services. We never sell your personal information.</p>
+                <h4>Data Protection</h4>
+                <p>We implement security measures to protect your personal information and only share data with trusted partners for program opportunities with your consent.</p>
+                <h4>Contact</h4>
+                <p>For privacy concerns, contact us at LaunchPadCommunity00@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content policy-modal">
+            <span class="close">&times;</span>
+            <h3 class="fire-text">Terms of Service</h3>
+            <div class="policy-content">
+                <p><strong>Last Updated:</strong> December 5, 2024</p>
+                <h4>Acceptance of Terms</h4>
+                <p>By joining LaunchPad Community, you agree to these terms and our community guidelines.</p>
+                <h4>Community Membership</h4>
+                <p>Membership is free and open to Cameroonian youth. Members must provide accurate information and follow community guidelines.</p>
+                <h4>Content and Conduct</h4>
+                <p>Members must respect others, stay on topic, and verify information before sharing. Inappropriate behavior may result in removal.</p>
+                <h4>Opportunities and Applications</h4>
+                <p>We provide opportunities in good faith but cannot guarantee acceptance or success. Members are responsible for their own applications.</p>
+                <h4>Limitation of Liability</h4>
+                <p>LaunchPad Community is not liable for decisions made based on shared information or outcomes of applications.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ethics & Conduct Modal -->
+    <div id="ethicsModal" class="modal">
+        <div class="modal-content policy-modal">
+            <span class="close">&times;</span>
+            <h3 class="fire-text">Ethics & Conduct</h3>
+            <div class="policy-content">
+                <p><strong>Our Commitment to Ethical Practices</strong></p>
+                <h4>Integrity</h4>
+                <p>We maintain transparency in all communications and verify opportunities before sharing. All information provided is accurate and up-to-date.</p>
+                <h4>Inclusivity</h4>
+                <p>LaunchPad welcomes all Cameroonian youth regardless of background, religion, gender, or socioeconomic status. Discrimination is not tolerated.</p>
+                <h4>Respect</h4>
+                <p>All members, mentors, and partners deserve respect. Harassment, bullying, or inappropriate behavior will result in immediate removal.</p>
+                <h4>Confidentiality</h4>
+                <p>Personal information shared within the community must be kept confidential. Do not share others' personal details without permission.</p>
+                <h4>Reporting Violations</h4>
+                <p>Report any violations of these ethics to our admin team immediately. We take all reports seriously and investigate promptly.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 class="fire-text">Send Feedback</h3>
+            <form id="feedbackForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <select required>
+                    <option value="">Feedback Type</option>
+                    <option value="suggestion">Suggestion</option>
+                    <option value="compliment">Compliment</option>
+                    <option value="question">Question</option>
+                    <option value="other">Other</option>
+                </select>
+                <textarea placeholder="Your feedback..." required rows="5"></textarea>
+                <button type="submit" class="btn-primary">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Report Issue Modal -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 class="fire-text">Report an Issue</h3>
+            <form id="reportForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <select required>
+                    <option value="">Issue Type</option>
+                    <option value="technical">Technical Problem</option>
+                    <option value="content">Content Issue</option>
+                    <option value="conduct">Conduct Violation</option>
+                    <option value="spam">Spam/Abuse</option>
+                    <option value="other">Other</option>
+                </select>
+                <textarea placeholder="Describe the issue..." required rows="5"></textarea>
+                <button type="submit" class="btn-primary">Submit Report</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="rocket-fire">
+        <div class="fire-container">
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p data-en="© 2025 LaunchPad Community. Founded December 5th, 2025. Guiding Cameroonian Youth Into Opportunity." data-fr="© 2025 Communauté LaunchPad. Fondée le 5 décembre 2025. Guider la Jeunesse Camerounaise vers l'Opportunité." data-de="© 2025 LaunchPad-Gemeinschaft. Gegründet am 5. Dezember 2025. Kamerunische Jugend zu Möglichkeiten führen." data-zh="© 2025 LaunchPad社区。成立于2025年12月5日。引导喀麦隆青年走向机遇。" data-es="© 2025 Comunidad LaunchPad. Fundada el 5 de diciembre de 2025. Guiando a la Juventud Camerunesa hacia la Oportunidad.">&copy; 2025 LaunchPad Community. Founded December 5th, 2025. Guiding Cameroonian Youth Into Opportunity.</p>
+        </div>
+    </footer>
+
+    <script src="emailjs-config.js"></script>
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+</body>
 </html>
