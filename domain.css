@@ -1,0 +1,564 @@
+/* ==========================================
+   DOMAIN PAGE STYLES
+   Shared styles for all LaunchPad domain pages
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0E0E0F 0%, #0A0A0B 50%, #060608 100%);
+    color: #F5F5DC;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Fire Text */
+.fire-text {
+    background: linear-gradient(135deg, #FF6A00 0%, #FFD36A 50%, #FF6A00 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fireShimmer 3s ease-in-out infinite;
+}
+
+@keyframes fireShimmer {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 200% center; }
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================
+   DOMAIN HEADER
+   ========================================== */
+.domain-header {
+    padding: 100px 0 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.domain-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center top, rgba(255, 106, 0, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.domain-emoji {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 20px rgba(255, 106, 0, 0.4));
+}
+
+.domain-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+}
+
+.domain-header p {
+    color: rgba(245, 245, 220, 0.65);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #FF6A00;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 25px;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 106, 0, 0.3);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background: rgba(255, 106, 0, 0.15);
+    transform: translateX(-5px);
+    box-shadow: 0 0 20px rgba(255, 106, 0, 0.15);
+}
+
+/* ==========================================
+   LEADERSHIP SECTION
+   ========================================== */
+.domain-leadership {
+    padding: 60px 0;
+}
+
+.domain-section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.leader-card {
+    background: linear-gradient(145deg, rgba(255, 106, 0, 0.08) 0%, rgba(14, 14, 15, 0.95) 50%, rgba(255, 211, 106, 0.04) 100%);
+    border: 1px solid rgba(255, 106, 0, 0.2);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.leader-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #FF6A00, #FFD36A, #FF6A00, transparent);
+}
+
+.leader-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 106, 0, 0.15);
+}
+
+.leader-badge {
+    display: inline-block;
+    background: rgba(255, 106, 0, 0.15);
+    color: #FFD36A;
+    padding: 5px 18px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+
+.vice-lead .leader-badge {
+    background: rgba(0, 102, 255, 0.15);
+    color: #87CEEB;
+}
+
+.leader-photo-wrapper {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 18px;
+}
+
+.leader-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 106, 0, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+.vice-lead .leader-photo {
+    border-color: rgba(0, 102, 255, 0.4);
+}
+
+.leader-glow {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 106, 0, 0.25) 0%, transparent 70%);
+    animation: pulseGlow 2.5s ease-in-out infinite;
+    z-index: 0;
+}
+
+.vice-lead .leader-glow {
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.25) 0%, transparent 70%);
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.06); }
+}
+
+.leader-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 6px;
+}
+
+.leader-role {
+    color: rgba(245, 245, 220, 0.55);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.leader-links a {
+    color: #FF6A00;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.leader-links a:hover {
+    color: #FFD36A;
+    transform: scale(1.2);
+}
+
+.vice-lead .leader-links a {
+    color: #87CEEB;
+}
+
+/* ==========================================
+   DOMAIN CALENDAR
+   ========================================== */
+.domain-calendar {
+    padding: 60px 0;
+}
+
+.domain-calendar-widget {
+    background: linear-gradient(145deg, rgba(0, 102, 255, 0.05) 0%, rgba(14, 14, 15, 0.95) 100%);
+    border: 1px solid rgba(0, 102, 255, 0.15);
+    border-radius: 20px;
+    padding: 35px;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.cal-header h3 {
+    min-width: 170px;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.cal-arrow {
+    background: rgba(255, 106, 0, 0.15);
+    border: 1px solid rgba(255, 106, 0, 0.3);
+    color: #FF6A00;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.cal-arrow:hover {
+    background: rgba(255, 106, 0, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 106, 0, 0.3);
+}
+
+.cal-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(245, 245, 220, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 106, 0, 0.08);
+    margin-bottom: 8px;
+}
+
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 20px;
+}
+
+.cal-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    color: rgba(245, 245, 220, 0.65);
+    transition: all 0.2s ease;
+}
+
+.cal-day.today {
+    background: rgba(255, 106, 0, 0.3);
+    color: #FFD36A;
+    font-weight: 700;
+    border: 1px solid rgba(255, 106, 0, 0.5);
+    box-shadow: 0 0 10px rgba(255, 106, 0, 0.2);
+}
+
+.cal-day.has-event {
+    position: relative;
+}
+
+.cal-day.has-event::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #FF6A00;
+}
+
+.cal-day.empty {
+    color: transparent;
+}
+
+.cal-events {
+    border-top: 1px solid rgba(255, 106, 0, 0.08);
+    padding-top: 15px;
+}
+
+.cal-events h4 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.cal-event-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    background: rgba(255, 106, 0, 0.04);
+    border-left: 3px solid #FF6A00;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+}
+
+.cal-event-item:hover {
+    background: rgba(255, 106, 0, 0.1);
+    transform: translateX(3px);
+}
+
+.cal-event-date {
+    color: #FF6A00;
+    font-weight: 700;
+    font-size: 0.85rem;
+    min-width: 50px;
+}
+
+.cal-event-name {
+    color: rgba(245, 245, 220, 0.75);
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   MOST ENGAGED MEMBER
+   ========================================== */
+.domain-engaged {
+    padding: 60px 0;
+}
+
+.engaged-card {
+    background: linear-gradient(145deg, rgba(255, 106, 0, 0.1) 0%, rgba(14, 14, 15, 0.95) 40%, rgba(255, 211, 106, 0.05) 100%);
+    border: 1px solid rgba(255, 106, 0, 0.25);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.engaged-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #FF6A00, #FFD36A, #FF6A00, #FFD36A);
+    background-size: 400% 400%;
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0.2;
+    animation: borderGlow 4s ease infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% { background-position: 0% 50%; opacity: 0.15; }
+    50% { background-position: 100% 50%; opacity: 0.35; }
+}
+
+.engaged-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #FFD36A;
+}
+
+.engaged-badge i {
+    color: #FF6A00;
+    font-size: 1.4rem;
+    filter: drop-shadow(0 0 8px rgba(255, 106, 0, 0.5));
+}
+
+.engaged-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.engaged-month-label {
+    font-size: 1rem;
+    color: rgba(245, 245, 220, 0.8);
+    font-weight: 600;
+    min-width: 140px;
+    text-align: center;
+}
+
+.engaged-photo-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+}
+
+.engaged-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 106, 0, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.engaged-glow {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 106, 0, 0.3) 0%, transparent 70%);
+    animation: pulseGlow 2s ease-in-out infinite;
+    z-index: 0;
+}
+
+.engaged-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 6px;
+}
+
+.engaged-role {
+    color: rgba(245, 245, 220, 0.55);
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+}
+
+.engaged-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.engaged-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.engaged-stat-number {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.engaged-stat-label {
+    font-size: 0.72rem;
+    color: rgba(245, 245, 220, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.domain-footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 106, 0, 0.1);
+    color: rgba(245, 245, 220, 0.4);
+    font-size: 0.85rem;
+}
+
+.domain-footer a {
+    color: #FF6A00;
+    text-decoration: none;
+}
+
+.domain-footer a:hover {
+    color: #FFD36A;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+    .domain-header h1 {
+        font-size: 2rem;
+    }
+    
+    .domain-emoji {
+        font-size: 3rem;
+    }
+    
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .engaged-stats {
+        gap: 15px;
+    }
+    
+    .domain-calendar-widget {
+        padding: 20px;
+    }
+}

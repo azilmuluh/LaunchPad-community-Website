@@ -20,7 +20,7 @@ if (hamburger && navMenu) {
 function toggleTheme() {
     const body = document.body;
     const themeIcon = document.getElementById('themeIcon');
-    
+
     if (body.classList.contains('light-mode')) {
         body.classList.remove('light-mode');
         if (themeIcon) themeIcon.className = 'fas fa-moon';
@@ -36,17 +36,17 @@ function toggleTheme() {
 function changeLanguage() {
     const langSelect = document.getElementById('languageSelect');
     if (!langSelect) return;
-    
+
     const lang = langSelect.value;
     localStorage.setItem('language', lang);
-    
+
     document.querySelectorAll(`[data-${lang}]`).forEach(element => {
         const translation = element.getAttribute(`data-${lang}`);
         if (translation) {
-            element.textContent = translation;
+            element.innerHTML = translation;
         }
     });
-    
+
     document.querySelectorAll(`[data-placeholder-${lang}]`).forEach(element => {
         const placeholder = element.getAttribute(`data-placeholder-${lang}`);
         if (placeholder) {
@@ -59,7 +59,7 @@ function changeLanguage() {
 function loadTheme() {
     const savedTheme = localStorage.getItem('theme');
     const themeIcon = document.getElementById('themeIcon');
-    
+
     if (savedTheme === 'light') {
         document.body.classList.add('light-mode');
         if (themeIcon) themeIcon.className = 'fas fa-sun';
@@ -71,7 +71,7 @@ function loadTheme() {
 function loadLanguage() {
     const savedLang = localStorage.getItem('language') || 'en';
     const langSelect = document.getElementById('languageSelect');
-    
+
     if (langSelect) {
         langSelect.value = savedLang;
         changeLanguage();
@@ -132,7 +132,7 @@ function toggleMentors() {
     const hiddenMentors = document.querySelectorAll('.mentor-card.hidden-mentor');
     const button = document.getElementById('showMoreMentors');
     const currentLang = localStorage.getItem('language') || 'en';
-    
+
     const translations = {
         en: { more: 'See More Mentors', less: 'Show Less' },
         fr: { more: 'Voir Plus de Mentors', less: 'Voir Moins' },
@@ -140,7 +140,7 @@ function toggleMentors() {
         zh: { more: '查看更多导师', less: '显示更少' },
         es: { more: 'Ver Más Mentores', less: 'Mostrar Menos' }
     };
-    
+
     if (button.textContent.includes('See More') || button.textContent.includes('Voir Plus') || button.textContent.includes('Mehr') || button.textContent.includes('查看') || button.textContent.includes('Ver Más')) {
         hiddenMentors.forEach(mentor => {
             mentor.style.display = 'block';
@@ -158,7 +158,7 @@ function toggleTeam() {
     const hiddenTeam = document.querySelectorAll('.team-member.hidden-team');
     const button = document.getElementById('showMoreTeam');
     const currentLang = localStorage.getItem('language') || 'en';
-    
+
     const translations = {
         en: { more: 'See More Team', less: 'Show Less' },
         fr: { more: 'Voir Plus d\'Équipe', less: 'Voir Moins' },
@@ -166,7 +166,7 @@ function toggleTeam() {
         zh: { more: '查看更多团队', less: '显示更少' },
         es: { more: 'Ver Más Equipo', less: 'Mostrar Menos' }
     };
-    
+
     if (button.textContent.includes('See More') || button.textContent.includes('Voir Plus') || button.textContent.includes('Mehr') || button.textContent.includes('查看') || button.textContent.includes('Ver Más')) {
         hiddenTeam.forEach(member => {
             member.style.display = 'block';
@@ -184,7 +184,7 @@ function toggleStory() {
     const fullStory = document.getElementById('fullStory');
     const button = document.querySelector('.read-more-btn');
     const currentLang = localStorage.getItem('language') || 'en';
-    
+
     const translations = {
         en: { more: 'Read More', less: 'Read Less' },
         fr: { more: 'Lire Plus', less: 'Lire Moins' },
@@ -192,7 +192,7 @@ function toggleStory() {
         zh: { more: '阅读更多', less: '阅读更少' },
         es: { more: 'Leer Más', less: 'Leer Menos' }
     };
-    
+
     if (fullStory.style.display === 'none') {
         fullStory.style.display = 'block';
         button.textContent = translations[currentLang].less;
@@ -209,7 +209,7 @@ function setupBlogSubscription() {
         blogForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const email = e.target.querySelector('input[type="email"]').value;
-            
+
             if (typeof emailjs !== 'undefined' && typeof EMAILJS_CONFIG !== 'undefined') {
                 console.log('Sending email with config:', EMAILJS_CONFIG);
                 const templateParams = {
@@ -218,7 +218,7 @@ function setupBlogSubscription() {
                     subscription_type: 'Blog Updates',
                     from_name: 'LaunchPad Community'
                 };
-                
+
                 if (typeof grecaptcha !== 'undefined') {
                     grecaptcha.execute().then(token => {
                         templateParams['g-recaptcha-response'] = token;
@@ -251,13 +251,13 @@ function setupBlogSubscription() {
 // Fire Sparks Rain Animation
 function createSparkRain() {
     const flamePositions = [20, 30, 40, 50, 60, 70, 80];
-    
+
     for (let i = 0; i < 5; i++) {
         setTimeout(() => {
             const spark = document.createElement('div');
             const isBlue = Math.random() < 0.3;
             spark.className = `fire-spark ${isBlue ? 'blue' : 'orange'}`;
-            
+
             const flamePos = flamePositions[Math.floor(Math.random() * flamePositions.length)];
             spark.style.position = 'fixed';
             spark.style.left = `calc(${flamePos}% - 10px)`;
@@ -265,9 +265,9 @@ function createSparkRain() {
             spark.style.setProperty('--drift', (Math.random() - 0.5) * 100 + 'px');
             spark.style.animationDuration = (Math.random() * 2 + 5) + 's';
             spark.style.zIndex = '1';
-            
+
             document.body.appendChild(spark);
-            
+
             setTimeout(() => {
                 if (spark.parentNode) spark.remove();
             }, 8000);
@@ -281,7 +281,7 @@ function initScrollAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -289,23 +289,23 @@ function initScrollAnimations() {
             }
         });
     }, observerOptions);
-    
+
     // Add animation classes to elements
     document.querySelectorAll('.team-member').forEach((el, i) => {
         el.classList.add(i % 2 === 0 ? 'fade-in-left' : 'fade-in-right');
         observer.observe(el);
     });
-    
+
     document.querySelectorAll('.mentor-card').forEach((el, i) => {
         el.classList.add(i % 3 === 0 ? 'fade-in-left' : i % 3 === 1 ? 'fade-in-up' : 'fade-in-right');
         observer.observe(el);
     });
-    
+
     document.querySelectorAll('.apply-option, .objective, .story, .purpose-item').forEach((el, i) => {
         el.classList.add(i % 2 === 0 ? 'fade-in-left' : 'fade-in-right');
         observer.observe(el);
     });
-    
+
     document.querySelectorAll('.section-title').forEach(el => {
         el.classList.add('fade-in-up');
         observer.observe(el);
@@ -313,16 +313,16 @@ function initScrollAnimations() {
 }
 
 // Initialize animations on page load
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     loadTheme();
     loadLanguage();
     setupBlogSubscription();
     initScrollAnimations();
-    
+
     // Start fire spark rain immediately and continuously
     createSparkRain();
     setInterval(createSparkRain, 800);
-    
+
     // Existing form handlers...
     const subscribeForm = document.getElementById('subscribeForm');
     if (subscribeForm) {
@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.target.reset();
         });
     }
-    
+
     const ambassadorForm = document.getElementById('ambassadorForm');
     if (ambassadorForm) {
         ambassadorForm.addEventListener('submit', (e) => {
@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.target.reset();
         });
     }
-    
+
     const scoutForm = document.getElementById('scoutForm');
     if (scoutForm) {
         scoutForm.addEventListener('submit', (e) => {
@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.target.reset();
         });
     }
-    
+
     const partnerForm = document.getElementById('partnerForm');
     if (partnerForm) {
         partnerForm.addEventListener('submit', (e) => {
@@ -363,12 +363,12 @@ document.addEventListener('DOMContentLoaded', function() {
             e.target.reset();
         });
     }
-    
+
     const sponsorForm = document.getElementById('sponsorForm');
     if (sponsorForm) {
         sponsorForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             if (typeof emailjs !== 'undefined' && typeof EMAILJS_CONFIG !== 'undefined') {
                 const formData = new FormData(e.target);
                 const templateParams = {
@@ -380,7 +380,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     sponsorship_type: e.target.querySelector('select').value,
                     message: e.target.querySelector('textarea').value
                 };
-                
+
                 emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATES.SPONSORSHIP, templateParams)
                     .then(() => {
                         alert('Thank you for your sponsorship inquiry! We appreciate your interest in supporting our mission.');
@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     const feedbackForm = document.getElementById('feedbackForm');
     if (feedbackForm) {
         feedbackForm.addEventListener('submit', (e) => {
@@ -408,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.target.reset();
         });
     }
-    
+
     const reportForm = document.getElementById('reportForm');
     if (reportForm) {
         reportForm.addEventListener('submit', (e) => {
@@ -434,3 +434,201 @@ window.scrollToSection = scrollToSection;
 window.toggleMentors = toggleMentors;
 window.toggleTeam = toggleTeam;
 window.toggleStory = toggleStory;
+// ==========================================
+// CALENDAR & MONTH NAVIGATION
+// ==========================================
+
+// Placeholder data for monthly honours
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+const honourData = {
+    ambassador: {},
+    scout: {},
+    communityMember: {}
+};
+
+// Current month trackers
+let ambassadorMonth = { month: 1, year: 2026 }; // Feb 2026
+let scoutMonth = { month: 1, year: 2026 };
+let communityMemberMonth = { month: 1, year: 2026 };
+let calendarMonth = { month: 1, year: 2026 };
+
+function getMonthLabel(monthIndex, year) {
+    return `${monthNames[monthIndex]} ${year}`;
+}
+
+function navigateHonour(type, direction) {
+    let tracker;
+    if (type === 'ambassador') tracker = ambassadorMonth;
+    else tracker = scoutMonth;
+
+    tracker.month += direction;
+    if (tracker.month > 11) { tracker.month = 0; tracker.year++; }
+    if (tracker.month < 0) { tracker.month = 11; tracker.year--; }
+
+    const label = getMonthLabel(tracker.month, tracker.year);
+    document.getElementById(`${type}MonthLabel`).textContent = label;
+
+    // Update the profile card (placeholder)
+    const key = `${tracker.year}-${tracker.month}`;
+    const data = honourData[type][key];
+    const container = document.getElementById(`${type}OfMonth`);
+
+    if (data) {
+        container.querySelector('h3').textContent = data.name;
+        container.querySelector('.honour-role').textContent = data.role;
+        container.querySelector('.honour-achievement').textContent = data.achievement;
+        if (data.photo) container.querySelector('.honour-photo').src = data.photo;
+    } else {
+        container.querySelector('h3').textContent = 'Coming Soon';
+        container.querySelector('.honour-role').textContent = type === 'ambassador' ? 'Ambassador Placeholder' : 'Scout Placeholder';
+        container.querySelector('.honour-achievement').textContent = 'Achievements will be highlighted here';
+        container.querySelector('.honour-photo').src = 'images/logos/logo.jpeg';
+    }
+}
+
+function navigateCommunityMember(direction) {
+    communityMemberMonth.month += direction;
+    if (communityMemberMonth.month > 11) { communityMemberMonth.month = 0; communityMemberMonth.year++; }
+    if (communityMemberMonth.month < 0) { communityMemberMonth.month = 11; communityMemberMonth.year--; }
+
+    const label = getMonthLabel(communityMemberMonth.month, communityMemberMonth.year);
+    document.getElementById('communityMemberMonthLabel').textContent = label;
+
+    const key = `${communityMemberMonth.year}-${communityMemberMonth.month}`;
+    const data = honourData.communityMember[key];
+    const container = document.getElementById('communityMemberSpotlight');
+
+    if (data) {
+        container.querySelector('h3').textContent = data.name;
+        container.querySelector('.spotlight-role').textContent = data.role;
+        if (data.photo) container.querySelector('.spotlight-photo').src = data.photo;
+        const stats = container.querySelectorAll('.spotlight-stat-number');
+        if (data.messages) stats[0].textContent = data.messages;
+        if (data.contributions) stats[1].textContent = data.contributions;
+        if (data.impact) stats[2].textContent = data.impact;
+    } else {
+        container.querySelector('h3').textContent = 'Coming Soon';
+        container.querySelector('.spotlight-role').textContent = 'Community Member';
+        container.querySelector('.spotlight-photo').src = 'images/logos/logo.jpeg';
+        const stats = container.querySelectorAll('.spotlight-stat-number');
+        stats[0].textContent = '—';
+        stats[1].textContent = '—';
+        stats[2].textContent = '—';
+    }
+}
+
+// Calendar rendering
+function navigateCalendar(direction) {
+    calendarMonth.month += direction;
+    if (calendarMonth.month > 11) { calendarMonth.month = 0; calendarMonth.year++; }
+    if (calendarMonth.month < 0) { calendarMonth.month = 11; calendarMonth.year--; }
+    renderCalendar();
+}
+
+function renderCalendar() {
+    const label = getMonthLabel(calendarMonth.month, calendarMonth.year);
+    document.getElementById('calendarMonthLabel').textContent = label;
+
+    const grid = document.getElementById('calendarGrid');
+    grid.innerHTML = '';
+
+    const firstDay = new Date(calendarMonth.year, calendarMonth.month, 1).getDay();
+    const daysInMonth = new Date(calendarMonth.year, calendarMonth.month + 1, 0).getDate();
+    const today = new Date();
+
+    // Empty cells before first day
+    for (let i = 0; i < firstDay; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'calendar-day empty';
+        grid.appendChild(cell);
+    }
+
+    // Day cells
+    for (let d = 1; d <= daysInMonth; d++) {
+        const cell = document.createElement('div');
+        cell.className = 'calendar-day';
+        cell.textContent = d;
+
+        if (d === today.getDate() && calendarMonth.month === today.getMonth() && calendarMonth.year === today.getFullYear()) {
+            cell.classList.add('today');
+        }
+
+        // Placeholder event markers (every 5th and 15th, 25th)
+        if (d % 10 === 5 || d === 20 || d === 25) {
+            cell.classList.add('has-event');
+        }
+
+        grid.appendChild(cell);
+    }
+}
+
+// Initialize calendar on page load
+document.addEventListener('DOMContentLoaded', function () {
+    const now = new Date();
+    ambassadorMonth = { month: now.getMonth(), year: now.getFullYear() };
+    scoutMonth = { month: now.getMonth(), year: now.getFullYear() };
+    communityMemberMonth = { month: now.getMonth(), year: now.getFullYear() };
+    calendarMonth = { month: now.getMonth(), year: now.getFullYear() };
+
+    // Set initial labels
+    const currentLabel = getMonthLabel(now.getMonth(), now.getFullYear());
+    const ambassadorLabel = document.getElementById('ambassadorMonthLabel');
+    const scoutLabel = document.getElementById('scoutMonthLabel');
+    const communityLabel = document.getElementById('communityMemberMonthLabel');
+
+    if (ambassadorLabel) ambassadorLabel.textContent = currentLabel;
+    if (scoutLabel) scoutLabel.textContent = currentLabel;
+    if (communityLabel) communityLabel.textContent = currentLabel;
+
+    if (document.getElementById('calendarGrid')) {
+        renderCalendar();
+    }
+});
+
+// Expose functions to global scope
+window.navigateHonour = navigateHonour;
+window.navigateCommunityMember = navigateCommunityMember;
+window.navigateCalendar = navigateCalendar;
+
+// Toggle function for Ambassadors
+function toggleAmbassadors() {
+    const hiddenCards = document.querySelectorAll('.hidden-ambassador');
+    const btn = document.getElementById('btnAmbassadors');
+    const isShowing = Array.from(hiddenCards).some(card => card.classList.contains('show'));
+    const lang = document.documentElement.lang || 'en';
+
+    hiddenCards.forEach(card => card.classList.toggle('show'));
+
+    const btnTextMap = {
+        'en': { show: 'See Less Ambassadors', hide: 'See More Ambassadors' },
+        'fr': { show: 'Voir Moins d\'Ambassadeurs', hide: 'Voir Plus d\'Ambassadeurs' },
+        'de': { show: 'Weniger Botschafter sehen', hide: 'Mehr Botschafter sehen' },
+        'zh': { show: '查看更少大使', hide: '查看更多大使' },
+        'es': { show: 'Ver Menos Embajadores', hide: 'Ver Más Embajadores' }
+    };
+
+    const text = isShowing ? btnTextMap[lang].hide : btnTextMap[lang].show;
+    btn.querySelector('span').textContent = text;
+}
+
+// Toggle function for Scouts
+function toggleScouts() {
+    const hiddenCards = document.querySelectorAll('.hidden-scout');
+    const btn = document.getElementById('btnScouts');
+    const isShowing = Array.from(hiddenCards).some(card => card.classList.contains('show'));
+    const lang = document.documentElement.lang || 'en';
+
+    hiddenCards.forEach(card => card.classList.toggle('show'));
+
+    const btnTextMap = {
+        'en': { show: 'See Less Scouts', hide: 'See More Scouts' },
+        'fr': { show: 'Voir Moins d\'Éclaireurs', hide: 'Voir Plus d\'Éclaireurs' },
+        'de': { show: 'Weniger Pfadfinder sehen', hide: 'Mehr Pfadfinder sehen' },
+        'zh': { show: '查看更少侦察员', hide: '查看更多侦察员' },
+        'es': { show: 'Ver Menos Exploradores', hide: 'Ver Más Exploradores' }
+    };
+
+    const text = isShowing ? btnTextMap[lang].hide : btnTextMap[lang].show;
+    btn.querySelector('span').textContent = text;
+}
